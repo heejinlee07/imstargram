@@ -8,6 +8,17 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 10px;
+  }
+
+  body{
+    font-size: 1.4rem;
+    background-color: #fafafa;
+    color: #262626;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -30,17 +41,6 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
-
-  html {
-    font-size: 10px;
-  }
-
-  body{
-    font-size: 1.4rem;
-    background-color: #fafafa;
-    color: #262626;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 `;
 
