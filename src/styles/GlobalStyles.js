@@ -2,46 +2,46 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
-  ${reset};
+  ${reset}
 
   *, *::before, *::after {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
 
-a {
-  text-decoration:none;
-  color:inherit;
-  cursor: pointer;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
 
-html {
-  font-size: 10px;
-}
+  ol, ul, li {
+    list-style: none;
+  }
 
-body {
-  font-size: 1.4rem;
-  background-color: #fafafa;
-  color: #262626;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
-ol, ul, li {
-  list-style: none;
-}
+  input, button {
+    background-color: transparent;
+  }
 
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+  button {
+    cursor: pointer;
+  }
 
-input, button {
-  background-color: transparent;
-}
+  html {
+    font-size: 10px;
+  }
 
-button {
-  cursor: pointer;
-}
+  body{
+    font-size: 1.4rem;
+    background-color: #fafafa;
+    color: #262626;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
 `;
 
 export default GlobalStyles;
