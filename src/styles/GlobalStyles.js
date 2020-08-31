@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
     color: #262626;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-
+  
   a {
     text-decoration: none;
     color: inherit;
