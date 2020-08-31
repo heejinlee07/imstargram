@@ -3,6 +3,7 @@ import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
+
   *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -19,8 +20,9 @@ html {
 
 body {
   font-size: 14rem;
-  background-color: #262626;
-  font-family: -apple-system, system-ui,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif;
+  background-color: #fafafa;
+  color: #262626;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 ol, ul, li {
