@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-size: 14rem;
+  font-size: 1.4rem;
   background-color: #fafafa;
   color: #262626;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
