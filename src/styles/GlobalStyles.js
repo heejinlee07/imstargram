@@ -38,10 +38,6 @@ const GlobalStyles = createGlobalStyle`
   input, button {
     background-color: transparent;
   }
-
-  button {
-    cursor: pointer;
-  }
 `;
 
 export default GlobalStyles;
