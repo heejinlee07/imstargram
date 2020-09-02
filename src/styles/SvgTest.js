@@ -23,15 +23,15 @@ const SvgTest = () => {
         {isHome === false ? (
           <path d={inactiveHome}></path>
         ) : (
-          <path d={activeHome}></path>
-        )}
+            <path d={activeHome}></path>
+          )}
       </HomeIcon>
       <DmIcon onClick={clickDm}>
         {isDm === false ? (
           <path d={inactiveDm}></path>
         ) : (
-          <path d={activeDm}></path>
-        )}
+            <path d={activeDm}></path>
+          )}
       </DmIcon>
     </div>
   );
