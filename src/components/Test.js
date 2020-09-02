@@ -13,7 +13,9 @@ import Inputs from './common/Inputs';
 function Test() {
   return (
     <div>
+      <Buttons btnHeigth={20} btnWidth={40} btnMargin={2} bgColor="red" />
       <Buttons btnWidth={30}>팔로우</Buttons>
+      <Buttons btnWidth={90}>팔로우</Buttons>
       <Inputs placeholder="검색" />
     </div>
   );
