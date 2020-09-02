@@ -1,11 +1,11 @@
 import React from 'react';
 
-const DirectPage = () => {
+const Home = () => {
   return (
     <div>
-
+      홈이다~~~
     </div>
   );
 };
 
-export default DirectPage;
+export default Home;

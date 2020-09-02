@@ -1,5 +1,6 @@
 import React from 'react';
 import Inputs from '../common/Inputs';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,9 +10,9 @@ const Header = () => {
         <Inputs placeholder="검색" />
       </div>
       <ul>
-        <li>홈</li>
-        <li>디엠</li>
-        <li>랜덤 추천</li>
+        <li><Link to="/">홈</Link></li>
+        <li><Link to="/direct">디엠</Link></li>
+        <li><Link to="/explore">랜덤 추천</Link></li>
         <li>좋아요</li>
         <li>
           <ul>
