@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { bodyBgWhite } from '../../styles/variables';
+import { bodyBgWhite, nonSelectGrey } from '../../styles/variables';
 
 export const InputUi = styled.input`
   width: ${(props) => props.InputWidth}%;
@@ -12,6 +12,11 @@ export const InputUi = styled.input`
   margin: ${(props) => props.InputMargin || 3}px;
   border-radius: ${(props) => props.InputBorderRad || 3}px;
   border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+
+  &::placeholder {
+  color: ${(props) => props.placeholderColor || nonSelectGrey};
+    text-align: center;
+  }
 
   &:hover {
     cursor: auto;
