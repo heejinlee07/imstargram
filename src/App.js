@@ -2,6 +2,8 @@ import React from 'react';
 import Test from './components/Test';
 import SvgTest from './styles/SvgTest';
 import Header from './components/header/Header';
+import Posts from './components/Posts';
+import GlobalStyles from './styles/GlobalStyles';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <h1>I'mstagram</h1>
       <Test />
       <SvgTest />
+      <Posts />
+      <GlobalStyles />
     </div>
   );
 }
