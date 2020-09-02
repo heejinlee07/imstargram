@@ -1,7 +1,8 @@
 import React from 'react';
 import Test from './components/Test';
-import GlobalStyles from './styles/GlobalStyles';
 import SvgTest from './styles/SvgTest';
+import Posts from './components/Posts';
+import GlobalStyles from './styles/GlobalStyles';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <h1>I'mstagram</h1>
       <Test />
       <SvgTest />
+      <Posts />
       <GlobalStyles />
     </div>
   );
