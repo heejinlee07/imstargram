@@ -8,8 +8,8 @@ export const CardUi = styled.div`
   color: ${(props) => props.color};
   text-decoration: none;
   text-align: center;
-  padding: ${(props) => props.padding || 5}px;
-  margin: ${(props) => props.margin || 0}px;
+  padding: ${(props) => props.padding}px;
+  margin: ${(props) => props.margin}px;
   border-radius: ${(props) => props.borderRadius || 4}px;
   border: ${(props) => props.borderWeight || 1}px solid
     ${(props) => props.borderColor || borderGrey};
