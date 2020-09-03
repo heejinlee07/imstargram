@@ -9,6 +9,6 @@ const HomeContainer = () => {
       <Home />
     </div>
   );
-}
+};
 
 export default HomeContainer;

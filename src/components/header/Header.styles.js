@@ -18,6 +18,4 @@ export const HeaderNav = styled.ul`
   li {
     padding-left: 22px;
   }
-  
 `;
-

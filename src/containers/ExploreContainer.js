@@ -2,8 +2,7 @@ import React from 'react';
 import Header from '../components/header/Header';
 import Explore from '../components/pages/Explore';
 
-
-const ExploreContainer = () => {
+const HomeContainer = () => {
   return (
     <div>
       <Header />
@@ -12,4 +11,4 @@ const ExploreContainer = () => {
   );
 };
 
-export default ExploreContainer;
+export default HomeContainer;

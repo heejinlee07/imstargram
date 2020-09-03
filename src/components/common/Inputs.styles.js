@@ -14,12 +14,10 @@ export const InputUi = styled.input`
   border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
   line-height: 18px;
   
-
   &::placeholder {
   color: ${(props) => props.placeholderColor || nonSelectGrey};
     text-align: center;
   }
-
   &:hover {
     cursor: auto;
   }
