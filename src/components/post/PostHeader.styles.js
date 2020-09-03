@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderGrey } from '../styles/variables';
+import { borderGrey } from '../../styles/variables';
 
 export const PostHeaderBlock = styled.div`
   display: flex;
