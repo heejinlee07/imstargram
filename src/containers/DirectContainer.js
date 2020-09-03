@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/header/Header';
 import Direct from '../components/pages/Direct';
 
-const DirectContainer = () => {
+const HomeContainer = () => {
   return (
     <div>
       <Header />
@@ -11,4 +11,4 @@ const DirectContainer = () => {
   );
 };
 
-export default DirectContainer;
+export default HomeContainer;
