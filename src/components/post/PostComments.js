@@ -1,5 +1,5 @@
 import React from 'react';
-import Inputs from './common/Inputs';
+import Inputs from '../common/Inputs';
 
 function PostComments() {
   return (
