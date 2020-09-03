@@ -80,9 +80,9 @@ const SvgTest = () => {
 
       <PaperPlaneIcon onClick={clickDirect}>
         {isActive.direct === false ? (
-          <path d={iconList.inactiveDirect}></path>
+          <path d={iconList.inactivePaperPlane}></path>
         ) : (
-          <path d={iconList.activeDirect}></path>
+          <path d={iconList.activePaperPlane}></path>
         )}
       </PaperPlaneIcon>
 
