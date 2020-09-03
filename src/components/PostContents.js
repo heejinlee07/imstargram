@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HeartIcon, BookmarkIcon } from '../styles/commonIcons/SvgIcons';
+import PostCarousel from './PostCarousel';
 
 function PostContents() {
   const [active, setActive] = useState({
@@ -19,6 +20,7 @@ function PostContents() {
 
   return (
     <div>
+      <PostCarousel />
       <HeartIcon isActive={active.heart} />
       <BookmarkIcon isActive={active.bookmark} />
     </div>
