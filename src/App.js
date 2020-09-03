@@ -1,6 +1,6 @@
 import React from 'react';
 import SvgTest from './styles/SvgTest';
-import Posts from './components/Posts';
+import Posts from './components/post/Posts';
 import GlobalStyles from './styles/GlobalStyles';
 import MainRouter from './router/MainRouter';
 
