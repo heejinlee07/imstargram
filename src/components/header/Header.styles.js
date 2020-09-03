@@ -4,7 +4,8 @@ export const HeaderBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 935px;
+  max-width: 975px;
+  padding: 0 20px;
   margin: 0 auto;
   background-color: red;
 `;
@@ -19,3 +20,4 @@ export const HeaderNav = styled.ul`
   }
   
 `;
+
