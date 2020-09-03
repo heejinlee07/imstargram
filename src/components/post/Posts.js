@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './common/Cards';
+import Cards from '../common/Cards';
 import PostHeader from './PostHeader';
 import PostContents from './PostContents';
 import PostComments from './PostComments';
