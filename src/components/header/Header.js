@@ -12,8 +12,8 @@ import {
 
 const Header = () => {
 
-  // const [headerProfileNavState, setHeaderProfileNavState] = useState()
-  // const openNavBar = 
+  const [headerProfileNavState, setHeaderProfileNavState] = useState(false)
+  const onClick = () => setHeaderProfileNavState(true)
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -36,7 +36,9 @@ const Header = () => {
             <Link to="/explore">랜덤 추천</Link>
           </li>
           <li>좋아요</li>
-          <li>프로필</li>
+          <li onClick={onClick}>프로필
+            {headerProfileNavState ? <HeaderProfile /> : null}
+          </li>
           <HeaderProfile>
             <li><span></span>프로필</li>
             <li><span></span>저장됨</li>
