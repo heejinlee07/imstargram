@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header/Header';
+import Header from '../components/header/Header';
 import Direct from '../components/pages/Direct';
 
 const HomeContainer = () => {
