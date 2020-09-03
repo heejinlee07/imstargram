@@ -7,14 +7,12 @@ import ExploreContainer from '../containers/ExploreContainer';
 const MainRouter = () => {
   return (
     <Switch>
-      <Route exact path='/' component={HomeContainer} />
-      <Route path='/direct' component={DirectContainer} />
-      <Route path='/explore' component={ExploreContainer} />
+      <div>테스트</div>
+      <Route exact path="/" component={HomeContainer} />
+      <Route path="/direct" component={DirectContainer} />
+      <Route path="/explore" component={ExploreContainer} />
     </Switch>
   );
 };
 
 export default MainRouter;
-
-
-
