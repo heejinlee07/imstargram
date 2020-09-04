@@ -88,24 +88,24 @@ const SvgTest = () => {
         {isActive.home === false ? (
           <path d={iconList.inactiveHome}></path>
         ) : (
-          <path d={iconList.activeHome}></path>
-        )}
+            <path d={iconList.activeHome}></path>
+          )}
       </HomeIcon>
 
       <PaperPlaneIcon aria-label="direct" onClick={clickDirect}>
         {isActive.direct === false ? (
           <path d={iconList.inactivePaperPlane}></path>
         ) : (
-          <path d={iconList.activePaperPlane}></path>
-        )}
+            <path d={iconList.activePaperPlane}></path>
+          )}
       </PaperPlaneIcon>
 
       <FindPeopleIcon onClick={clickFindPeople}>
         {isActive.findpeople === false ? (
           <path d={iconList.inactiveFindPeople}></path>
         ) : (
-          <path d={iconList.activeFindPeople}></path>
-        )}
+            <path d={iconList.activeFindPeople}></path>
+          )}
       </FindPeopleIcon>
 
       <HeartIcon
@@ -116,8 +116,8 @@ const SvgTest = () => {
         {isActive.heart === false ? (
           <path d={iconList.inactiveHeart}></path>
         ) : (
-          <path d={iconList.activeHeart}></path>
-        )}
+            <path d={iconList.activeHeart}></path>
+          )}
       </HeartIcon>
 
       <ReplyIcon>
@@ -128,8 +128,8 @@ const SvgTest = () => {
         {isActive.bookmark === false ? (
           <path d={iconList.inactiveBookmark}></path>
         ) : (
-          <path d={iconList.activeBookmark}></path>
-        )}
+            <path d={iconList.activeBookmark}></path>
+          )}
       </BookMarkIcon>
     </div>
   );
