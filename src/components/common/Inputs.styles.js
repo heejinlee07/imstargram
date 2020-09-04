@@ -7,7 +7,7 @@ export const InputUi = styled.input`
   background-color: ${(props) => props.InputColor || bodyBgWhite};
   color: ${(props) => props.color || bodyBgWhite};
   text-decoration: none;
-  font-size: 16px;
+  font-size: ${(props) => props.InputHeight || 16}px;
   padding: 3px 10px 3px 26px;
   margin: ${(props) => props.InputMargin || 3}px;
   border-radius: ${(props) => props.InputBorderRad || 3}px;
