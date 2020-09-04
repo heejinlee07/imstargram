@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
-import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
+import {
+  HeaderBlock,
+  HeaderNav,
+  HeaderWrap,
+  HeaderProfile,
+} from './Header.styles';
 import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
 import {
@@ -20,7 +25,7 @@ const Header = () => {
     direct: false,
     findpeople: false,
     heart: false,
-    bookmark: false,
+    profile: false,
   };
 
   const [isActive, setActive] = useState(state);
@@ -31,7 +36,7 @@ const Header = () => {
       direct: false,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -41,7 +46,7 @@ const Header = () => {
       direct: true,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -51,22 +56,32 @@ const Header = () => {
       direct: false,
       findpeople: true,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
   const clickHeart = () => {
-    if (navState === true) {
-      setActive(state);
-    } else {
-      setActive({
-        home: false,
-        direct: false,
-        findpeople: false,
-        heart: true,
-        bookmark: false,
-      });
-    }
+    navState
+      ? setActive(state)
+      : setActive({
+          home: false,
+          direct: false,
+          findpeople: false,
+          heart: true,
+          profile: false,
+        });
+  };
+
+  const clickProfile = () => {
+    navState
+      ? setActive(state)
+      : setActive({
+          home: false,
+          direct: false,
+          findpeople: false,
+          heart: false,
+          profile: true,
+        });
   };
 
   const onClick = () => {
@@ -132,7 +147,9 @@ const Header = () => {
             </HeartIcon>
           </li>
           {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>profile</li>
+          <li onClick={onClick}>
+            <HeaderProfile onClick={clickProfile}></HeaderProfile>
+          </li>
           {navState ? <HeaderModal /> : null}
         </HeaderNav>
       </HeaderBlock>
