@@ -73,8 +73,9 @@ const Header = () => {
   };
 
   const clickProfile = () => {
+    const test = isActive;
     navState
-      ? setActive(state)
+      ? setActive(test)
       : setActive({
           home: false,
           direct: false,
@@ -82,6 +83,7 @@ const Header = () => {
           heart: false,
           profile: true,
         });
+    console.log(test);
   };
 
   const onClick = () => {
