@@ -26,6 +26,20 @@ const SvgTest = () => {
       heart: false,
       bookmark: false,
     });
+    // const exam = isActive;
+    // console.log(isActive);
+    // const key = ['home', 'direct'];
+    // const value = [true, false];
+    // let test = new Map();
+    // for (let i = 0; i < key.length; i++) {
+    //   test.set(`${key[i]}`, value[i]);
+    // }
+    // console.log(test);
+    // for (let item of test.entries()) {
+    //   console.log(item);
+    // }
+    // console.log(test.forEach((item, key) => console.log(`${key}: ${item}`)));
+    // setActive({ ...isActive, home: true }, () => test);
   };
 
   const clickDirect = () => {
@@ -78,7 +92,7 @@ const SvgTest = () => {
         )}
       </HomeIcon>
 
-      <PaperPlaneIcon onClick={clickDirect}>
+      <PaperPlaneIcon aria-label="direct" onClick={clickDirect}>
         {isActive.direct === false ? (
           <path d={iconList.inactivePaperPlane}></path>
         ) : (
