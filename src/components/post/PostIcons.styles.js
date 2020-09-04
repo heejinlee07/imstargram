@@ -4,7 +4,12 @@ import { borderGrey } from '../../styles/variables';
 export const PostIconsBlock = styled.div`
   display: flex;
 
-  & button:last-child {
+  & svg:last-child {
     margin-left: auto;
   }
+`;
+
+export const PostLikeCount = styled.button`
+  margin: 0;
+  border: none;
 `;
