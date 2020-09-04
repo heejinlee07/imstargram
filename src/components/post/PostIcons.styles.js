@@ -8,3 +8,8 @@ export const PostIconsBlock = styled.div`
     margin-left: auto;
   }
 `;
+
+export const PostLikeCount = styled.button`
+  margin: 0;
+  border: none;
+`;
