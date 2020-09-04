@@ -33,7 +33,10 @@ export default function PostIcons() {
   return (
     <>
       <PostIconsBlock>
-        <HeartIcon onClick={clickHeart} fill={iconStatus.heart && heartRed}>
+        <HeartIcon
+          onClick={clickHeart}
+          fill={iconStatus.heart ? heartRed : undefined}
+        >
           <path
             d={iconStatus.heart ? iconList.activeHeart : iconList.inactiveHeart}
           />
