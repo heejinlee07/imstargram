@@ -1,19 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
-import {
-  HeaderBlock,
-  HeaderNav,
-  HeaderWrap,
-} from './Header.styles';
+import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
 import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
+import {
+  HomeIcon,
+  PaperPlaneIcon,
+  FindPeopleIcon,
+} from '../../styles/commonIcons/SvgIcons';
+import { iconList } from '../../styles/commonIcons/path';
 
 const Header = () => {
-  const [navState, setNavState] = useState(false)
+  const [navState, setNavState] = useState(false);
+
+  const state = {
+    home: true,
+    direct: false,
+    findpeople: false,
+    heart: false,
+    bookmark: false,
+  };
+
+  const [isActive, setActive] = useState(state);
+
+  const clickHome = () => {
+    setActive({
+      home: true,
+      direct: false,
+      findpeople: false,
+      heart: false,
+      bookmark: false,
+    });
+  };
+
+  const clickDirect = () => {
+    setActive({
+      home: false,
+      direct: true,
+      findpeople: false,
+      heart: false,
+      bookmark: false,
+    });
+  };
+
+  const clickFindPeople = () => {
+    setActive({
+      home: false,
+      direct: false,
+      findpeople: true,
+      heart: false,
+      bookmark: false,
+    });
+  };
+
   const onClick = () => {
     navState === true ? setNavState(false) : setNavState(true);
-  }
+  };
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -21,21 +64,48 @@ const Header = () => {
           <h1>logo</h1>
           <div>
             <Inputs
+              InputWidth={176}
+              InputMargin={0}
               InputColor={bodyBgWhite}
-              placeholder="검색" />
+              placeholder="검색"
+            />
             <span></span>
             <div></div>
           </div>
         </div>
         <HeaderNav>
           <li>
-            <Link to="/">홈</Link>
+            <Link to="/">
+              <HomeIcon onClick={clickHome}>
+                {isActive.home === false ? (
+                  <path d={iconList.inactiveHome}></path>
+                ) : (
+                  <path d={iconList.activeHome}></path>
+                )}
+              </HomeIcon>
+            </Link>
           </li>
           <li>
-            <Link to="/direct">디엠</Link>
+            <Link to="/direct">
+              <PaperPlaneIcon aria-label="direct" onClick={clickDirect}>
+                {isActive.direct === false ? (
+                  <path d={iconList.inactivePaperPlane}></path>
+                ) : (
+                  <path d={iconList.activePaperPlane}></path>
+                )}
+              </PaperPlaneIcon>
+            </Link>
           </li>
           <li>
-            <Link to="/explore">랜덤</Link>
+            <Link to="/explore">
+              <FindPeopleIcon onClick={clickFindPeople}>
+                {isActive.findpeople === false ? (
+                  <path d={iconList.inactiveFindPeople}></path>
+                ) : (
+                  <path d={iconList.activeFindPeople}></path>
+                )}
+              </FindPeopleIcon>
+            </Link>
           </li>
           <li onClick={onClick}>좋아</li>
           {navState ? <HeaderModal /> : null}
