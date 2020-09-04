@@ -7,7 +7,7 @@ export const CardUi = styled.div`
   background-color: ${(props) => props.bgColor || bodyBgWhite};
   color: ${(props) => props.color};
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   padding: ${(props) => props.padding}px;
   margin: ${(props) => props.margin}px;
   border-radius: ${(props) => props.borderRadius || 4}px;
