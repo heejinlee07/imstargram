@@ -7,5 +7,4 @@ const Personal = () => {
     </div>
   )
 };
-
 export default Personal;

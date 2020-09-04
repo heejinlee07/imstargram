@@ -10,5 +10,4 @@ const AccountsContainer = () => {
     </div>
   );
 };
-
 export default AccountsContainer;

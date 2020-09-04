@@ -5,4 +5,3 @@ const Direct = () => {
 };
 
 export default Direct;
-

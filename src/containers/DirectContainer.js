@@ -10,5 +10,4 @@ const DirectContainer = () => {
     </div>
   );
 };
-
 export default DirectContainer;

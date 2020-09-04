@@ -10,5 +10,4 @@ const ExploreContainer = () => {
     </div>
   );
 };
-
 export default ExploreContainer;

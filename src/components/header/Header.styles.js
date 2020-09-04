@@ -8,6 +8,7 @@ export const HeaderWrap = styled.div`
   border-bottom: solid 1.250px ${(props) => props.bgColor || borderGrey};;
 `;
 
+
 export const HeaderBlock = styled.div`
   display: flex;
   justify-content: space-between;

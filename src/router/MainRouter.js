@@ -14,7 +14,6 @@ const MainRouter = () => {
       <Route path="/explore" component={ExploreContainer} />
       <Route path="/Personal" component={PersonalContainer} />
       <Route path="/Accounts" component={AccountsContainer} />
-
     </Switch>
   );
 };

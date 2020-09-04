@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { borderGrey } from '../../styles/variables';
 
+
+
 export const HeaderProfileModal = styled.ul`
    width: 230px;
    background: rgba(var(--d87,255,255,255),1);

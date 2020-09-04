@@ -14,7 +14,6 @@ const Header = () => {
   const onClick = () => {
     navState === true ? setNavState(false) : setNavState(true);
   }
-
   return (
     <HeaderWrap>
       <HeaderBlock>

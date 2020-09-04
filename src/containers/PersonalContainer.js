@@ -10,5 +10,4 @@ const PersonalContainer = () => {
     </div>
   );
 };
-
 export default PersonalContainer;
