@@ -6,6 +6,7 @@ import {
   PaperPlaneIcon,
   BookmarkIcon,
 } from '../../styles/commonIcons/SvgIcons';
+import { heartRed } from '../../styles/variables';
 
 import { iconList } from '../../styles/commonIcons/path';
 
@@ -32,7 +33,7 @@ export default function PostIcons() {
   return (
     <>
       <PostIconsBlock>
-        <HeartIcon onClick={clickHeart} fill={!iconStatus.heart || 'red'}>
+        <HeartIcon onClick={clickHeart} fill={iconStatus.heart && heartRed}>
           <path
             d={iconStatus.heart ? iconList.activeHeart : iconList.inactiveHeart}
           />
