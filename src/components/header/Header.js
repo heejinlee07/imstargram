@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
 import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
@@ -8,6 +8,7 @@ import {
   HomeIcon,
   PaperPlaneIcon,
   FindPeopleIcon,
+  HeartIcon,
 } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
 
@@ -52,6 +53,20 @@ const Header = () => {
       heart: false,
       bookmark: false,
     });
+  };
+
+  const clickHeart = () => {
+    if (navState === true) {
+      setActive(state);
+    } else {
+      setActive({
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: true,
+        bookmark: false,
+      });
+    }
   };
 
   const onClick = () => {
@@ -107,9 +122,17 @@ const Header = () => {
               </FindPeopleIcon>
             </Link>
           </li>
-          <li onClick={onClick}>좋아</li>
+          <li onClick={onClick}>
+            <HeartIcon aria-label="활동 피드" onClick={clickHeart}>
+              {isActive.heart === false ? (
+                <path d={iconList.inactiveHeart}></path>
+              ) : (
+                <path d={iconList.activeHeart}></path>
+              )}
+            </HeartIcon>
+          </li>
           {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>프로필</li>
+          <li onClick={onClick}>profile</li>
           {navState ? <HeaderModal /> : null}
         </HeaderNav>
       </HeaderBlock>

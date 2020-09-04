@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import HomeContainer from '../containers/HomeContainer';
 import DirectContainer from '../containers/DirectContainer';
 import ExploreContainer from '../containers/ExploreContainer';
-import PersonalContainer from "../containers/PersonalContainer";
-import AccountsContainer from "../containers/AccountsContainer";
+import PersonalContainer from '../containers/PersonalContainer';
+import AccountsContainer from '../containers/AccountsContainer';
 
 const MainRouter = () => {
   return (
@@ -19,4 +19,3 @@ const MainRouter = () => {
 };
 
 export default MainRouter;
-
