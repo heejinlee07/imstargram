@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "리액트",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 2,
+      "name": "자바스크립트",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 3,
+      "name": "앵귤러",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 4,
+      "name": "뷰",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 5,
+      "name": "제이쿼리",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "text": "완전 졸리다...",
+      "image": "something url 1",
+      "location": "seoul",
+      "likeCount": 30,
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "text": "금요일 제일 좋다",
+      "image": "something url 2",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "text": "3번은 금요일 제일 좋다",
+      "image": "something url 3",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "text": "4번은 금요일 제일 좋다",
+      "image": "something url 4",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "text": "5번은 금요일 제일 좋다",
+      "image": "something url 5",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 3,
+      "text": "나도 너무 졸려 ㅋㅋㅋ",
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "postId": 2,
+      "text": "금요일 왜좋아ㅋㅋㅋㅋ",
+      "uploadDate": "2020/09/04"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "postId": 1,
+      "text": "나도 너무 졸려 ㅋㅋㅋ",
+      "uploadDate": "2020/09/04"
+    }
+  ],
+  "followInfos": [
+    {
+      "followerId": 1,
+      "followingId": 2
+    },
+    {
+      "followerId": 1,
+      "followingId": 3
+    },
+    {
+      "followerId": 2,
+      "followingId": 4
+    },
+    {
+      "followerId": 2,
+      "followingId": 5
+    }
+  ]
+}
