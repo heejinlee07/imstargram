@@ -14,8 +14,8 @@ function PostComments() {
   return (
     <PostCommentsBlock>
       <PostCommentList>
-        {commentsApi.map((c) => (
-          <li>
+        {commentsApi.map((c, i) => (
+          <li key={`commentId${i}`}>
             <WhiteButtons>닉네임</WhiteButtons> {c}
           </li>
         ))}
