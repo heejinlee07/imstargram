@@ -7,7 +7,7 @@ import {
   PostMore,
 } from './PostHeader.styles';
 
-import { MoreIcon } from '../styles/commonIcons/SvgIcons';
+import { MoreIcon } from '../../styles/commonIcons/SvgIcons';
 
 function PostHeader() {
   return (
