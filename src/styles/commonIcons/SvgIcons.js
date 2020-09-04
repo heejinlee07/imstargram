@@ -82,7 +82,6 @@ export const MoreIcon = ({ ...rest }) => {
   return (
     <svg
       aria-label="옵션 더 보기"
-      class="_8-yf5 "
       fill="#262626"
       height="16"
       viewBox="0 0 48 48"
@@ -90,24 +89,24 @@ export const MoreIcon = ({ ...rest }) => {
       {...rest}
     >
       <circle
-        clip-rule="evenodd"
+        clipRule="evenodd"
         cx="8"
         cy="24"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         r="4.5"
       ></circle>
       <circle
-        clip-rule="evenodd"
+        clipRule="evenodd"
         cx="24"
         cy="24"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         r="4.5"
       ></circle>
       <circle
-        clip-rule="evenodd"
+        clipRule="evenodd"
         cx="40"
         cy="24"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         r="4.5"
       ></circle>
     </svg>
