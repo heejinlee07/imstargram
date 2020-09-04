@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { borderGrey, bodyBgWhite } from '../../styles/variables';
+import { borderGrey } from '../../styles/variables';
 
 export const HeaderWrap = styled.div`
   width: 100%;
   height: 54px;
   background-color: #fff;
-  border-bottom: solid 1.250px ${(props) => props.bgColor || borderGrey};;
+  border-bottom: solid 1.25px ${borderGrey};
 `;
-
 
 export const HeaderBlock = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ export const HeaderBlock = styled.div`
   max-width: 975px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: ${(props) => props.bgColor || bodyBgWhite};
+  background-color: #fff;
   height: 100%;
   h1 {
     width: 360px;
@@ -36,6 +35,3 @@ export const HeaderNav = styled.ul`
     padding-left: 22px;
   }
 `;
-
-
-
