@@ -12,8 +12,8 @@ const MainRouter = () => {
       <Route exact path="/" component={HomeContainer} />
       <Route path="/direct" component={DirectContainer} />
       <Route path="/explore" component={ExploreContainer} />
-      <Route path="/Personal" component={PersonalContainer} />
-      <Route path="/Accounts" component={AccountsContainer} />
+      <Route path="/personal" component={PersonalContainer} />
+      <Route path="/accounts" component={AccountsContainer} />
     </Switch>
   );
 };
