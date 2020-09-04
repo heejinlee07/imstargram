@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './common/Cards';
+import Cards from '../common/Cards';
 import PostHeader from './PostHeader';
 import PostContents from './PostContents';
 import PostComments from './PostComments';
@@ -7,10 +7,10 @@ import PostComments from './PostComments';
 function Posts() {
   return (
     <div>
-      <Cards>
-        <PostHeader></PostHeader>
-        <PostContents></PostContents>
-        <PostComments></PostComments>
+      <Cards padding={'0'}>
+        <PostHeader />
+        <PostContents />
+        <PostComments />
       </Cards>
     </div>
   );
