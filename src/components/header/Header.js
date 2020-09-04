@@ -5,16 +5,16 @@ import {
   HeaderBlock,
   HeaderNav,
   HeaderWrap,
-  HeaderProfile
 } from './Header.styles';
-
-
+import HeaderModal from './HeaderModal';
 
 
 const Header = () => {
 
   const [navState, setNavState] = useState(false)
-  const onClick = () => setNavState(true)
+  const onClick = () => {
+    navState === true ? setNavState(false) : setNavState(true);
+  }
 
   return (
     <HeaderWrap>
@@ -38,16 +38,8 @@ const Header = () => {
             <Link to="/explore">랜덤</Link>
           </li>
           <li>좋아</li>
-          <li onClick={onClick}>프로필
-            {navState ?
-              <HeaderProfile>
-                <li><span></span>프로필</li>
-                <li><span></span>저장됨</li>
-                <li><span></span>설정</li>
-                <div>로그아웃</div>
-              </HeaderProfile>
-              : null}
-          </li>
+          <li onClick={onClick}>프로필</li>
+          {navState ? <HeaderModal /> : null}
         </HeaderNav>
       </HeaderBlock>
     </HeaderWrap>
