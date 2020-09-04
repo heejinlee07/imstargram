@@ -7,10 +7,9 @@ import {
   HeaderWrap,
 } from './Header.styles';
 import HeaderModal from './HeaderModal';
-
+import { bodyBgWhite } from '../../styles/variables';
 
 const Header = () => {
-
   const [navState, setNavState] = useState(false)
   const onClick = () => {
     navState === true ? setNavState(false) : setNavState(true);
@@ -22,7 +21,9 @@ const Header = () => {
         <div>
           <h1>logo</h1>
           <div>
-            <Inputs placeholder="검색" />
+            <Inputs
+              InputColor={bodyBgWhite}
+              placeholder="검색" />
             <span></span>
             <div></div>
           </div>
@@ -37,7 +38,8 @@ const Header = () => {
           <li>
             <Link to="/explore">랜덤</Link>
           </li>
-          <li>좋아</li>
+          <li onClick={onClick}>좋아</li>
+          {navState ? <HeaderModal /> : null}
           <li onClick={onClick}>프로필</li>
           {navState ? <HeaderModal /> : null}
         </HeaderNav>

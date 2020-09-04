@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { bodyBgWhite, nonSelectGrey } from '../../styles/variables';
+import { bodyBgWhite, nonSelectGrey, borderGrey } from '../../styles/variables';
 
 export const InputUi = styled.input`
   width: ${(props) => props.InputWidth || 176}px;
