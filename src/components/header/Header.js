@@ -65,7 +65,7 @@ const Header = () => {
           <div>
             <Inputs
               InputWidth={176}
-              InputMargin={0}
+              InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
             />
