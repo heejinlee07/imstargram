@@ -1,14 +1,14 @@
 import React from 'react';
-import Test from './components/Test';
 import SvgTest from './styles/SvgTest';
-import Posts from './components/Posts';
+import Posts from './components/post/Posts';
 import GlobalStyles from './styles/GlobalStyles';
+import MainRouter from './router/MainRouter';
 
 function App() {
   return (
     <div>
+      <MainRouter />
       <h1>I'mstagram</h1>
-      <Test />
       <SvgTest />
       <Posts />
       <GlobalStyles />
