@@ -5,7 +5,7 @@ export const InputUi = styled.input`
   width: ${(props) => props.InputWidth || 215}px;
   height: ${(props) => props.InputHeight || 28}px;
   background-color: ${(props) => props.InputColor || bodyBgWhite};
-  color: ${(props) => props.color || 'rgba(var(--i1d,38,38,38),1)'};
+  color: ${(props) => props.color || bodyBgWhite};
   text-decoration: none;
   font-size: ${(props) => props.InputHeight || 16}px;
   padding: 3px 10px 3px 26px;

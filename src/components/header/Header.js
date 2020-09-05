@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
-import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
+import {
+  HeaderBlock,
+  HeaderNav,
+  HeaderWrap,
+  HeaderProfile,
+} from './Header.styles';
 import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
 import {
   HomeIcon,
   PaperPlaneIcon,
   FindPeopleIcon,
+  HeartIcon,
 } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
 
@@ -19,7 +25,7 @@ const Header = () => {
     direct: false,
     findpeople: false,
     heart: false,
-    bookmark: false,
+    profile: false,
   };
 
   const [isActive, setActive] = useState(state);
@@ -30,7 +36,7 @@ const Header = () => {
       direct: false,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -40,7 +46,7 @@ const Header = () => {
       direct: true,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -50,8 +56,34 @@ const Header = () => {
       direct: false,
       findpeople: true,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
+  };
+
+  const clickHeart = () => {
+    navState
+      ? setActive(state)
+      : setActive({
+          home: false,
+          direct: false,
+          findpeople: false,
+          heart: true,
+          profile: false,
+        });
+  };
+
+  const clickProfile = () => {
+    const test = isActive;
+    navState
+      ? setActive(test)
+      : setActive({
+          home: false,
+          direct: false,
+          findpeople: false,
+          heart: false,
+          profile: true,
+        });
+    console.log(test);
   };
 
   const onClick = () => {
@@ -107,9 +139,19 @@ const Header = () => {
               </FindPeopleIcon>
             </Link>
           </li>
-          <li onClick={onClick}>좋아</li>
+          <li onClick={onClick}>
+            <HeartIcon aria-label="활동 피드" onClick={clickHeart}>
+              {isActive.heart === false ? (
+                <path d={iconList.inactiveHeart}></path>
+              ) : (
+                <path d={iconList.activeHeart}></path>
+              )}
+            </HeartIcon>
+          </li>
           {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>프로필</li>
+          <li onClick={onClick}>
+            <HeaderProfile onClick={clickProfile}></HeaderProfile>
+          </li>
           {navState ? <HeaderModal /> : null}
         </HeaderNav>
       </HeaderBlock>
