@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "자바스크립트",
+      "name": "unforgiving_therock",
       "password": "aaa",
       "email": "hello@gmail.com",
       "profileImage": "something url",
@@ -42,6 +42,15 @@
     }
   ],
   "posts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "text": "금요일 제일 좋다",
+      "image": "something url 2",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04"
+    },
     {
       "id": 2,
       "userId": 2,
@@ -117,18 +126,46 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "userId": 1,
-      "postId": 3,
-      "text": "나도 너무 졸려 ㅋㅋㅋ",
-      "uploadDate": "2020/09/04"
+      "userId": 3,
+      "postId": 1,
+      "text": "앵귤러다",
+      "uploadDate": "2020/09/04",
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": 5,
-      "postId": 2,
-      "text": "금요일 왜좋아ㅋㅋㅋㅋ",
-      "uploadDate": "2020/09/04"
+      "userId": 3,
+      "postId": 1,
+      "text": "앵귤러지롱",
+      "uploadDate": "2020/09/04",
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "나는 세번째",
+      "uploadDate": "2020/09/04",
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "d",
+      "uploadDate": "2020/09/04",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "d",
+      "uploadDate": "2020/09/04",
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "d",
+      "uploadDate": "2020/09/04",
+      "id": 6
     }
   ],
   "followInfos": [

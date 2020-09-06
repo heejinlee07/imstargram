@@ -2,19 +2,15 @@ import React, { useCallback } from 'react';
 import Cards from '../common/Cards';
 import PostHeader from './PostHeader';
 import PostContents from './PostContents';
-import PostComments from './PostComments';
+import PostCommentList from './PostCommentList';
 
 import {
   getPostsByUser,
-  getCommentsByPost,
   addPost,
   editPost,
   deletePost,
-  getFollowingsByFollowerId,
-  addFollowInfo,
-  deleteFollowInfo,
-  getFollowersByFollowingId,
-} from '../../services/posts';
+} from '../../services/postsApi';
+
 import useApi from '../../hooks/useApi';
 
 function Posts() {
@@ -22,61 +18,20 @@ function Posts() {
   const postId = 1;
 
   const getPosts = useCallback(() => getPostsByUser(userId), [userId]);
-  const getComments = useCallback(() => getCommentsByPost(postId), [postId]);
   const { data: posts, isLoading, error, invoke: invokePosts } = useApi(
     getPosts
   );
-  const { data: comments } = useApi(getComments);
-  const getfollowings = useCallback(() => getFollowingsByFollowerId(userId), [
-    userId,
-  ]);
-  const getfollowers = useCallback(() => getFollowersByFollowingId(userId), [
-    userId,
-  ]);
-  const { data: followings, invoke: invokefollowinfos } = useApi(getfollowings);
-  const { data: followers, invoke: invokefollowerInfos } = useApi(getfollowers);
 
   return (
     <div>
       <Cards padding={'0'}>
         <PostHeader />
-        {followings?.map((following) => (
-          <>
-            <div>{following.followingId}</div>
-          </>
-        ))}
-        <hr />
-        {followers?.map((follower) => (
-          <>
-            <div>{follower.followerId}</div>
-          </>
-        ))}
-        <button
-          onClick={async () => {
-            await addFollowInfo({ followerId: 3, followingId: 1 });
-            invokefollowinfos();
-          }}
-        >
-          팔로우하기
-        </button>
-        <button
-          onClick={async () => {
-            await deleteFollowInfo(7);
-            await invokefollowinfos();
-          }}
-        >
-          취소하기
-        </button>
         <PostContents />
-        <PostComments />
+        <PostCommentList />
         {isLoading && <div>로딩 중...</div>}
         {error && <div>{error.message}</div>}
         {posts?.map((post) => (
-          <div>{post.text}</div>
-        ))}
-        <hr />
-        {comments?.map((comment) => (
-          <div>{comment.text}</div>
+          <div key={post.id}>{post.text}</div>
         ))}
         <button
           type="button"
