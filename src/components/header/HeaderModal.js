@@ -1,17 +1,24 @@
 import React from 'react';
-import {
-  HeaderProfileModal
-} from './HeaderModal.styles';
+import { HeaderProfileModal } from './HeaderModal.styles';
+import { Link } from 'react-router-dom';
 
 const HeaderModal = () => {
-
   return (
     <div>
-      <HeaderProfileModal
-      >
-        <li><span></span>프로필</li>
-        <li><span></span>저장됨</li>
-        <li><span></span>설정</li>
+      <HeaderProfileModal>
+        <Link to="/personal">
+          <li>
+            <span>프로필</span>
+          </li>
+        </Link>
+        <li>
+          <span>저장됨</span>
+        </li>
+        <Link to="/accounts">
+          <li>
+            <span>설정</span>
+          </li>
+        </Link>
         <div>로그아웃</div>
       </HeaderProfileModal>
     </div>
