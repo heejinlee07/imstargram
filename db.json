@@ -43,15 +43,6 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "userId": 1,
-      "text": "완전 졸리다...",
-      "image": "something url 1",
-      "location": "seoul",
-      "likeCount": 30,
-      "uploadDate": "2020/09/04"
-    },
-    {
       "id": 2,
       "userId": 2,
       "text": "금요일 제일 좋다",
@@ -71,7 +62,7 @@
     },
     {
       "id": 4,
-      "userId": 4,
+      "userId": 1,
       "text": "4번은 금요일 제일 좋다",
       "image": "something url 4",
       "location": "seoul",
@@ -80,12 +71,48 @@
     },
     {
       "id": 5,
-      "userId": 5,
+      "userId": 1,
       "text": "5번은 금요일 제일 좋다",
       "image": "something url 5",
       "location": "seoul",
       "likeCount": 12,
       "uploadDate": "2020/09/04"
+    },
+    {
+      "userId": 1,
+      "text": "3번은 금요일 제일 좋다",
+      "image": "something url 3",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "text": "3번은 금요일 제일 좋다",
+      "image": "something url 3",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "text": "3번은 금요일 제일 좋다",
+      "image": "something url 3",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "text": "3번은 금요일 제일 좋다",
+      "image": "something url 3",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 9
     }
   ],
   "comments": [
@@ -102,31 +129,38 @@
       "postId": 2,
       "text": "금요일 왜좋아ㅋㅋㅋㅋ",
       "uploadDate": "2020/09/04"
-    },
-    {
-      "id": 3,
-      "userId": 3,
-      "postId": 1,
-      "text": "나도 너무 졸려 ㅋㅋㅋ",
-      "uploadDate": "2020/09/04"
     }
   ],
   "followInfos": [
     {
       "followerId": 1,
-      "followingId": 2
+      "followingId": 2,
+      "id": 1
     },
     {
       "followerId": 1,
-      "followingId": 3
+      "followingId": 3,
+      "id": 2
     },
     {
       "followerId": 2,
-      "followingId": 4
+      "followingId": 4,
+      "id": 3
     },
     {
       "followerId": 2,
-      "followingId": 5
+      "followingId": 1,
+      "id": 4
+    },
+    {
+      "followerId": 1,
+      "followingId": 2,
+      "id": 5
+    },
+    {
+      "followerId": 3,
+      "followingId": 1,
+      "id": 6
     }
   ]
 }
