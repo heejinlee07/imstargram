@@ -65,7 +65,7 @@ export const IntendSignUp = styled.div`
 
 export const IntendSignQ = styled.p`
   text-align: center;
-  margin-top: 7%;
+  line-height: 42px;
 `;
 
 export const IntendSignLink = styled.span`

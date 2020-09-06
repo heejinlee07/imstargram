@@ -4,10 +4,8 @@ import {
   SignContainder,
   Mockup,
   SignInBody,
-  // SignInputContainer,
   SignLogo,
   SignFormContainer,
-  // IntendSignUp,
   IntendSignQ,
   IntendSignLink,
   DownloadApp,
@@ -36,8 +34,14 @@ const SignIn = () => {
       <SignContainder>
         <Mockup />
         <SignInBody>
-          <Cards bgColor={'#fff'} height={60}>
-            {/* <SignInputContainer> */}
+          <Cards
+            bgColor={'#fff'}
+            width={350}
+            height={380}
+            paddingTop={10}
+            paddingBottom={10}
+            marginBottom={10}
+          >
             <SignLogo>I'mstargram</SignLogo>
             <SignFormContainer>
               <form>
@@ -46,39 +50,51 @@ const SignIn = () => {
                   <div>
                     <label for="userID">아이디</label>
                     <Inputs
-                      InputWidth={258}
-                      InputHeight={36}
+                      InputWidth={268}
+                      InputHeight={38}
                       placeholder={'전화번호, 사용자 이름 또는 이메일'}
+                      marginBottom={6}
                     ></Inputs>
                   </div>
                   <div>
                     <label for="userID">비밀번호</label>
                     <Inputs
-                      InputWidth={258}
-                      InputHeight={36}
+                      InputWidth={268}
+                      InputHeight={38}
                       placeholder={'비밀번호'}
+                      marginBottom={6}
                     ></Inputs>
                   </div>
                   <Buttons
-                    width={100}
+                    width={268}
+                    height={30}
                     bgColor={buttonSkyBlue}
                     color={'#fff'}
                     opacity={0.3}
+                    marginTop={8}
+                    marginBottom={8}
+                    marginLeft={3}
+                    marginRight={3}
                   >
                     로그인
                   </Buttons>
                 </fieldset>
               </form>
             </SignFormContainer>
-            {/* </SignInputContainer> */}
           </Cards>
-          <Cards height={10} bgColor={'#fff'}>
+          <Cards
+            width={350}
+            height={63}
+            bgColor={'#fff'}
+            paddingTop={10}
+            paddingBottom={10}
+            marginBottom={10}
+          >
             <IntendSignQ>
               계정이 없으신가요?
               <IntendSignLink>가입하기</IntendSignLink>
             </IntendSignQ>
           </Cards>
-          {/* <IntendSignUp></IntendSignUp> */}
           <DownloadApp>
             앱을 다운로드하세요.
             <LinkContainer>
