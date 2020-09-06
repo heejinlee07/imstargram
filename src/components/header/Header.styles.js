@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { borderGrey, bodyBgWhite } from '../../styles/variables';
+import { borderGrey, fontColorBlack } from '../../styles/variables';
 
 export const HeaderWrap = styled.div`
   width: 100%;
   height: 54px;
   background-color: #fff;
-  border-bottom: solid 1.250px ${(props) => props.bgColor || borderGrey};;
+  border-bottom: solid 1.25px ${borderGrey};
 `;
-
 
 export const HeaderBlock = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ export const HeaderBlock = styled.div`
   max-width: 975px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: ${(props) => props.bgColor || bodyBgWhite};
+  background-color: #fff;
   height: 100%;
   h1 {
     width: 360px;
@@ -37,5 +36,10 @@ export const HeaderNav = styled.ul`
   }
 `;
 
-
-
+export const HeaderProfile = styled.div`
+  width: 22px;
+  height: 22px;
+  border: 1px solid ${(props) => props.solid || fontColorBlack};
+  border-radius: 50%;
+  cursor: pointer;
+`;
