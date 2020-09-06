@@ -7,7 +7,8 @@ const HeaderModal = () => {
 
   return (
     <div>
-      <HeaderProfileModal>
+      <HeaderProfileModal
+      >
         <li><span></span>프로필</li>
         <li><span></span>저장됨</li>
         <li><span></span>설정</li>

@@ -3,6 +3,7 @@ import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
 import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
 import HeaderModal from './HeaderModal';
+import HeaderLikeModal from './HeaderLikeModal';
 import { bodyBgWhite } from '../../styles/variables';
 import {
   HomeIcon,
@@ -11,8 +12,10 @@ import {
 } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
 
+
 const Header = () => {
   const [navState, setNavState] = useState(false);
+  const [navLikeState, setNavLikeState] = useState(false);
 
   const state = {
     home: true,
@@ -54,9 +57,14 @@ const Header = () => {
     });
   };
 
-  const onClick = () => {
+  const onClickProfile = () => {
     navState === true ? setNavState(false) : setNavState(true);
   };
+
+  const onClickLike = () => {
+    navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
+  }
+
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -107,9 +115,9 @@ const Header = () => {
               </FindPeopleIcon>
             </Link>
           </li>
-          <li onClick={onClick}>좋아</li>
-          {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>프로필</li>
+          <li onClick={onClickLike}>좋아</li>
+          {navLikeState ? <HeaderLikeModal /> : null}
+          <li onClick={onClickProfile}>프로필</li>
           {navState ? <HeaderModal /> : null}
         </HeaderNav>
       </HeaderBlock>
