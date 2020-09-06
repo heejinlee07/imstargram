@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { bodyBgWhite, fontColorBlack } from '../../styles/variables';
 
 export const ButtonUi = styled.button`
-  width: ${(props) => props.width}%;
-  height: ${(props) => props.height}%;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
   color: ${(props) => props.color || fontColorBlack};
   text-decoration: none;
   text-align: center;

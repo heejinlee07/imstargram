@@ -1,6 +1,11 @@
 import React from 'react';
+import { ExploreWrap } from './Explore.styles';
 
 const Explore = () => {
-  return <div>Explore다</div>;
+  return (
+    <ExploreWrap>
+      Explore다
+    </ExploreWrap>
+  );
 };
 export default Explore;

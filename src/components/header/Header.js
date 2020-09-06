@@ -16,6 +16,7 @@ import {
   HeartIcon,
 } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
+import HeaderLikeModal from './HeaderLikeModal';
 
 const Header = () => {
   const [navState, setNavState] = useState(false);
@@ -103,7 +104,7 @@ const Header = () => {
           <h1>logo</h1>
           <div>
             <Inputs
-              InputWidth={176}
+              InputWidth={215}
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
@@ -155,7 +156,7 @@ const Header = () => {
                 )}
             </HeartIcon>
           </li>
-          {navState ? <HeaderModal /> : null}
+          {navLikeState ? <HeaderLikeModal /> : null}
           <li onClick={onClickProfile}>
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>
