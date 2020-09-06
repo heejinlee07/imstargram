@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { bodyBgWhite, borderGrey } from '../../styles/variables';
+import { bodyBgWhite, borderGrey, nonSelectGrey } from '../../styles/variables';
 
 export const PersonalWrap = styled.div`
   width: 935px;
@@ -32,6 +32,7 @@ export const IdWrap = styled.div`
   height: 40px;
   margin-bottom: 20px;
   div {
+    font-weight: 300;
     font-size: 28px;
   }
   button {
@@ -39,6 +40,7 @@ export const IdWrap = styled.div`
     height: 30px;
     margin-left: 20px;
     padding: 5px 9px;
+    font-weight: 400;
     border-radius: 4px;
     border: 1px solid rgb(219, 219, 219);
     background-color: ${(props) => props.bgColor || bodyBgWhite};
@@ -57,5 +59,23 @@ export const FollowWrap = styled.div`
       margin-left: 4px;
       font-weight: 600;
     }
+  }
+`
+
+export const ProfileNav = styled.li`
+  display: flex;
+  justify-content: center;
+  width: 935px;
+  height: 52px;
+  margin: 0 auto;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: ${nonSelectGrey};
+  li {
+    margin-right: 60px;
+  }
+  li:last-child {
+    margin: 0;
   }
 `

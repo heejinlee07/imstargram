@@ -4,12 +4,13 @@ import {
   Profile,
   IdWrap,
   FollowWrap,
+  ProfileNav
 } from './Personal.styles';
 
 const Personal = () => {
   return (
-    <PersonalWrap>
-      <div>
+    <>
+      <PersonalWrap>
         <main>
           <header>
             <Profile aria-label="프로필">
@@ -39,9 +40,14 @@ const Personal = () => {
             </FollowWrap>
           </div>
         </main>
-      </div>
-
-    </PersonalWrap >
+      </PersonalWrap>
+      <ProfileNav>
+        <li><span></span>게시물</li>
+        <li><span></span>IGTV</li>
+        <li><span></span>저장됨</li>
+        <li><span></span>태그됨</li>
+      </ProfileNav>
+    </>
   )
 };
 export default Personal;
