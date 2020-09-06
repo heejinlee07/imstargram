@@ -80,14 +80,12 @@ export const OtherSignWord = styled.p`
 export const FacebookSignIn = styled.div`
   width: 268px;
   height: 20px;
-  /* background-color: #999; */
   cursor: pointer;
   display: flex;
   justify-content: center;
 `;
 
 export const FacebookLogo = styled.span`
-  /* display: inline-block; */
   width: 16px;
   height: 16px;
   background-image: url('https://instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png');
