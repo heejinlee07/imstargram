@@ -6,6 +6,9 @@ import {
   SignInBody,
   SignLogo,
   SignFormContainer,
+  OtherSign,
+  OtherSignLine,
+  OtherSignWord,
   IntendSignQ,
   IntendSignLink,
   DownloadApp,
@@ -80,6 +83,10 @@ const SignIn = () => {
                   </Buttons>
                 </fieldset>
               </form>
+              <OtherSign>
+                <OtherSignLine />
+                <OtherSignWord>또는</OtherSignWord>
+              </OtherSign>
             </SignFormContainer>
           </Cards>
           <Cards

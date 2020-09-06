@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { borderGrey, buttonSkyBlue } from '../../styles/variables';
+import {
+  buttonSkyBlue,
+  borderGrey,
+  nonSelectGrey,
+} from '../../styles/variables';
 import '../../index.css';
 
 export const SignBody = styled.section`
@@ -29,14 +33,6 @@ export const SignInBody = styled.div`
   margin-top: 12px;
 `;
 
-export const SignInputContainer = styled.div`
-  background-color: #fff;
-  border: 1px solid ${borderGrey};
-  height: 380px;
-  padding: 10px 0;
-  margin-bottom: 10px;
-`;
-
 export const SignLogo = styled.h1`
   font-family: 'Satisfy', cursive;
   text-align: center;
@@ -48,19 +44,36 @@ export const SignLogo = styled.h1`
 
 export const SignFormContainer = styled.div`
   height: 268px;
-  /* background-color: sienna; */
   padding-top: 15px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const IntendSignUp = styled.div`
+export const OtherSign = styled.div`
+  position: relative;
+  width: 268px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+`;
+
+export const OtherSignLine = styled.div`
+  width: 268px;
+  height: 1px;
+  background-color: ${borderGrey};
+`;
+
+export const OtherSignWord = styled.p`
+  position: absolute;
+  top: 0;
+  left: 99px;
   background-color: #fff;
-  border: 1px solid ${borderGrey};
-  height: 63px;
-  padding: 10px 0;
-  margin-bottom: 10px;
+  padding: 0 18px;
+  width: 70px;
+  text-align: center;
+  color: ${nonSelectGrey};
 `;
 
 export const IntendSignQ = styled.p`
@@ -93,5 +106,4 @@ export const LinkContainer = styled.div`
 
 export const AppLink = styled.img`
   width: 140px;
-  /* height: 40px; */
 `;
