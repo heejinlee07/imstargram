@@ -57,6 +57,7 @@ export const OtherSign = styled.div`
   height: 15px;
   display: flex;
   align-items: center;
+  margin: 10px 40px 18px 40px;
 `;
 
 export const OtherSignLine = styled.div`
@@ -74,6 +75,36 @@ export const OtherSignWord = styled.p`
   width: 70px;
   text-align: center;
   color: ${nonSelectGrey};
+`;
+
+export const FacebookSignIn = styled.div`
+  width: 268px;
+  height: 20px;
+  /* background-color: #999; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FacebookLogo = styled.span`
+  /* display: inline-block; */
+  width: 16px;
+  height: 16px;
+  background-image: url('https://instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png');
+  background-position: -347px -329px;
+  background-size: 440px 411px;
+  margin-right: 8px;
+`;
+
+export const FacebookSignInLink = styled.span`
+  color: #385185;
+  font-weight: 600;
+`;
+
+export const PasswordReset = styled.span`
+  color: #385185;
+  margin-top: 12px;
+  font-size: 1.2rem;
 `;
 
 export const IntendSignQ = styled.p`

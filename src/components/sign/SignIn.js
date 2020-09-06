@@ -9,6 +9,10 @@ import {
   OtherSign,
   OtherSignLine,
   OtherSignWord,
+  FacebookSignIn,
+  FacebookLogo,
+  FacebookSignInLink,
+  PasswordReset,
   IntendSignQ,
   IntendSignLink,
   DownloadApp,
@@ -51,7 +55,7 @@ const SignIn = () => {
                 <fieldset>
                   <legend>로그인 폼</legend>
                   <div>
-                    <label for="userID">아이디</label>
+                    <label htmlFor="userID">아이디</label>
                     <Inputs
                       InputWidth={268}
                       InputHeight={38}
@@ -60,7 +64,7 @@ const SignIn = () => {
                     ></Inputs>
                   </div>
                   <div>
-                    <label for="userID">비밀번호</label>
+                    <label htmlFor="userID">비밀번호</label>
                     <Inputs
                       InputWidth={268}
                       InputHeight={38}
@@ -87,6 +91,11 @@ const SignIn = () => {
                 <OtherSignLine />
                 <OtherSignWord>또는</OtherSignWord>
               </OtherSign>
+              <FacebookSignIn aria-label="button">
+                <FacebookLogo />
+                <FacebookSignInLink>Facebook으로 로그인</FacebookSignInLink>
+              </FacebookSignIn>
+              <PasswordReset>비밀번호를 잊으셨나요?</PasswordReset>
             </SignFormContainer>
           </Cards>
           <Cards
