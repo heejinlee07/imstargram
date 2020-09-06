@@ -5,4 +5,8 @@ const Buttons = ({ children, ...rest }) => {
   return <ButtonUi {...rest}>{children}</ButtonUi>;
 };
 
+export const WhiteButtons = ({ children, ...rest }) => {
+  return <ButtonUi {...rest}>{children}</ButtonUi>;
+};
+
 export default Buttons;
