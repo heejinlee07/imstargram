@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/header/Header';
 import Personal from '../components/pages/Personal';
+import SubProfileRouter from '../router/SubProfileRouter';
 
 const PersonalContainer = () => {
   return (
     <div>
-      <Header />
       <Personal />
+      <SubProfileRouter />
     </div>
   );
 };

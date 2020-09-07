@@ -1,25 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
-import { HeaderBlock, HeaderNav, HeaderWrap } from './Header.styles';
+import {
+  HeaderBlock,
+  HeaderNav,
+  HeaderWrap,
+  HeaderProfile,
+} from './Header.styles';
 import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
 import {
   HomeIcon,
   PaperPlaneIcon,
   FindPeopleIcon,
+  HeartIcon,
 } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
+import HeaderLikeModal from './HeaderLikeModal';
 
 const Header = () => {
   const [navState, setNavState] = useState(false);
+  const [navLikeState, setNavLikeState] = useState(false);
+
+  const onClickProfile = () => {
+    navState === true ? setNavState(false) : setNavState(true);
+  };
+
+  const onClickLike = () => {
+    navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
+  }
 
   const state = {
     home: true,
     direct: false,
     findpeople: false,
     heart: false,
-    bookmark: false,
+    profile: false,
   };
 
   const [isActive, setActive] = useState(state);
@@ -30,7 +46,7 @@ const Header = () => {
       direct: false,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -40,7 +56,7 @@ const Header = () => {
       direct: true,
       findpeople: false,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
@@ -50,13 +66,37 @@ const Header = () => {
       direct: false,
       findpeople: true,
       heart: false,
-      bookmark: false,
+      profile: false,
     });
   };
 
-  const onClick = () => {
-    navState === true ? setNavState(false) : setNavState(true);
+  const clickHeart = () => {
+    navState
+      ? setActive(state)
+      : setActive({
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: true,
+        profile: false,
+      });
   };
+
+  const clickProfile = () => {
+    const test = isActive;
+    navState
+      ? setActive(test)
+      : setActive({
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: false,
+        profile: true,
+      });
+    console.log(test);
+  };
+
+
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -64,7 +104,7 @@ const Header = () => {
           <h1>logo</h1>
           <div>
             <Inputs
-              InputWidth={176}
+              InputWidth={215}
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
@@ -80,8 +120,8 @@ const Header = () => {
                 {isActive.home === false ? (
                   <path d={iconList.inactiveHome}></path>
                 ) : (
-                    <path d={iconList.activeHome}></path>
-                  )}
+                  <path d={iconList.activeHome}></path>
+                )}
               </HomeIcon>
             </Link>
           </li>
@@ -91,8 +131,8 @@ const Header = () => {
                 {isActive.direct === false ? (
                   <path d={iconList.inactivePaperPlane}></path>
                 ) : (
-                    <path d={iconList.activePaperPlane}></path>
-                  )}
+                  <path d={iconList.activePaperPlane}></path>
+                )}
               </PaperPlaneIcon>
             </Link>
           </li>
@@ -102,15 +142,29 @@ const Header = () => {
                 {isActive.findpeople === false ? (
                   <path d={iconList.inactiveFindPeople}></path>
                 ) : (
-                    <path d={iconList.activeFindPeople}></path>
-                  )}
+                  <path d={iconList.activeFindPeople}></path>
+                )}
               </FindPeopleIcon>
             </Link>
           </li>
-          <li onClick={onClick}>좋아</li>
+          <li onClick={onClickLike}>
+            <HeartIcon aria-label="활동 피드" onClick={clickHeart}>
+              {isActive.heart === false ? (
+                <path d={iconList.inactiveHeart}></path>
+              ) : (
+                  <path d={iconList.activeHeart}></path>
+                )}
+            </HeartIcon>
+          </li>
+          {navLikeState ? <HeaderLikeModal /> : null}
+          <li onClick={onClickProfile}>
+            <HeaderProfile onClick={clickProfile}></HeaderProfile>
+          </li>
           {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>프로필</li>
-          {navState ? <HeaderModal /> : null}
+          {/* 가입화면 테스트 연결페이지 */}
+          <li>
+            <Link to="/sign">Signin</Link>
+          </li>
         </HeaderNav>
       </HeaderBlock>
     </HeaderWrap>

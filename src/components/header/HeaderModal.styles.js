@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { borderGrey } from '../../styles/variables';
 
 export const HeaderProfileModal = styled.ul`
-   width: 230px;
+   width: ${(props) => props.modalWidth || 230}px;
    background: rgba(var(--d87,255,255,255),1);
    position: absolute;
    top: 54px;
-   left: 0;
+   left: ${(props) => props.left || 0}px;
    border-radius: 6px;
    text-align: left;
    li, div {

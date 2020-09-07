@@ -1,6 +1,14 @@
 import React from 'react';
+import SvgTest from '../../styles/SvgTest';
+import Posts from '../post/Posts';
+import { HomeWrap } from './Home.styles';
 
 const Home = () => {
-  return <div>홈이다~~~</div>;
+  return (
+    <HomeWrap>
+      <SvgTest />
+      <Posts />
+    </HomeWrap>
+  );
 };
 export default Home;

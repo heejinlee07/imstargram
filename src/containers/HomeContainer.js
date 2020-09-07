@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../components/header/Header';
 import Home from '../components/pages/Home';
 
 const HomeContainer = () => {
   return (
     <div>
-      <Header />
       <Home />
+      <div>하이하이</div>
     </div>
   );
 };

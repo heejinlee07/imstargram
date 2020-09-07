@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderGrey } from '../../styles/variables';
+import { borderGrey, fontColorBlack } from '../../styles/variables';
 
 export const HeaderWrap = styled.div`
   width: 100%;
@@ -34,4 +34,12 @@ export const HeaderNav = styled.ul`
     cursor: pointer;
     padding-left: 22px;
   }
+`;
+
+export const HeaderProfile = styled.div`
+  width: 22px;
+  height: 22px;
+  border: 1px solid ${(props) => props.solid || fontColorBlack};
+  border-radius: 50%;
+  cursor: pointer;
 `;
