@@ -63,7 +63,7 @@ function PostCommentList() {
   };
 
   const today = moment();
-  console.log(today);
+  // console.log(today);
 
   return (
     <PostCommentsBlock>
@@ -72,6 +72,7 @@ function PostCommentList() {
       <PostCommentListBlock>
         {comments?.map((comment) => (
           <PostComment
+            key={comment.id}
             comment={comment}
             _editComment={_editComment}
             _deleteComment={_deleteComment}

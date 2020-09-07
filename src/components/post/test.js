@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import PostCarousel from './PostCarousel';
-import PostIcons from './PostIcons';
 import Unsplash from 'unsplash-js';
 import { unsplashKey } from '../../services/unsplashKey';
 import unsplashApi from '../../services/unsplashApi';
-import { ImageBlock, ImageSrc } from './PhotoList.styles';
-import PhotoList from './PhotoList';
+import styled from 'styled-components';
 
-function PostContents() {
+const ImageBlock = styled.img``;
+
+export default function Test() {
   const [images, setImages] = useState();
   const [url, setUrl] = useState();
 
@@ -30,17 +29,20 @@ function PostContents() {
     }
     getPhotos();
   }, []);
+
   return (
     <div>
-      {images?.map((image) => (
-        <>
-          <PhotoList image={image} />
-          <PostCarousel image={image} />
-        </>
-      ))}
-      <PostIcons />
+      test중
+      <div>
+        {images?.map((image) => (
+          <>
+            <div key={images.id}>{image.alt_description}</div>
+            <div>
+              <ImageBlock src={image.urls.small} />
+            </div>
+          </>
+        ))}
+      </div>
     </div>
   );
 }
-
-export default PostContents;

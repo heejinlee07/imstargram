@@ -11,7 +11,8 @@ export const InputUi = styled.input`
   padding: ${(props) => props.padding || '3px 10px 3px 26px'};
   margin: ${(props) => props.margin || 3}px;
   border-radius: ${(props) => props.borderRadius || 3}px;
-  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  border: ${(props) =>
+    props.border || 'solid 1px rgba(var(--b6a, 219, 219, 219), 1)'};
   line-height: 18px;
 
   &::placeholder {

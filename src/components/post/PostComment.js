@@ -57,6 +57,8 @@ const PostComment = ({ comment, _editComment, _deleteComment }) => {
         <>
           <Inputs
             fontSize={14}
+            margin={'0'}
+            padding={2}
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
             onKeyPress={editContents}

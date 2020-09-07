@@ -149,24 +149,26 @@
     {
       "userId": 3,
       "postId": 1,
-      "text": "d",
+      "text": "나는 네번째 댓글",
       "uploadDate": "2020/09/04",
       "id": 4
     },
     {
       "userId": 3,
       "postId": 1,
-      "text": "d",
+      "text": "나는 다섯번째 댓글인디",
       "uploadDate": "2020/09/04",
       "id": 5
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "ㅎㅎㅎ",
+      "uploadDate": "2020/09/04",
+      "id": 6
     }
   ],
   "followInfos": [
-    {
-      "followerId": 1,
-      "followingId": 2,
-      "id": 1
-    },
     {
       "followerId": 1,
       "followingId": 3,
@@ -176,21 +178,6 @@
       "followerId": 2,
       "followingId": 4,
       "id": 3
-    },
-    {
-      "followerId": 2,
-      "followingId": 1,
-      "id": 4
-    },
-    {
-      "followerId": 1,
-      "followingId": 2,
-      "id": 5
-    },
-    {
-      "followerId": 3,
-      "followingId": 1,
-      "id": 6
     }
   ]
 }
