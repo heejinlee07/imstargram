@@ -7,7 +7,7 @@ import PostComments from './PostComments';
 function Posts() {
   return (
     <div>
-      <Cards padding={'0'}>
+      <Cards padding="0">
         <PostHeader />
         <PostContents />
         <PostComments />

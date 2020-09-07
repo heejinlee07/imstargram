@@ -1,5 +1,8 @@
+const black = '#262626';
+
 export const bodyBgWhite = '#fafafa';
-export const fontColorBlack = '#262626';
+export const bodyBgBlack = black;
+export const fontColorBlack = black;
 export const borderGrey = '#dbdbdb';
 export const nonSelectGrey = '#8e8e8e';
 export const linkBlue = '#00366b';
