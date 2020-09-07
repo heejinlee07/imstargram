@@ -5,6 +5,7 @@ export const ButtonUi = styled.button`
   width: ${(props) => props.width}%;
   height: ${(props) => props.height}%;
   color: ${(props) => props.color || fontColorBlack};
+  font-size: ${(props) => props.fontSize}px;
   text-decoration: none;
   text-align: center;
   padding: ${(props) => props.padding || 5}px;
@@ -15,5 +16,8 @@ export const ButtonUi = styled.button`
 
 export const WhiteButtonUi = styled(ButtonUi)`
   border: none;
-  font-weight: bold;
+  font-weight: ${(props) => props.fontWeight || 'bold'};
+  &:hover {
+    color: ${(props) => props.hoverColor};
+  }
 `;

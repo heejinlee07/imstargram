@@ -9,7 +9,7 @@ import {
 } from '../../services/commentsApi';
 
 import Inputs from '../common/Inputs';
-import { fontColorBlack } from '../../styles/variables';
+import { fontColorBlack, nonSelectGrey } from '../../styles/variables';
 import {
   PostCommentsBlock,
   PostCommentListBlock,
@@ -78,7 +78,9 @@ function PostCommentList() {
           />
         ))}
       </PostCommentListBlock>
-      <WhiteButtons>시간표시</WhiteButtons>
+      <WhiteButtons color={nonSelectGrey} fontSize={12}>
+        시간표시
+      </WhiteButtons>
       <PostInputBlock>
         <Inputs
           placeholder="댓글달기..."

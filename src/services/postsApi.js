@@ -5,6 +5,14 @@ export const getPostsByUser = (userId) => {
   return api.get(`/posts?userId=${userId}`);
 };
 
+// export const getLikeCountsByPost = (params) => {
+//   return api.get(`/posts`, params);
+// };
+
+export const getLikeCountsByPost = (postId) => {
+  return api.get(`/posts?postId=${postId}`);
+};
+
 export const addPost = (params) => {
   return api.post(`/posts`, params);
 };
