@@ -5,10 +5,19 @@ export const TagWrap = styled.div`
   margin: 0 auto;
   padding: 30 20 0;
   text-align: center;
+  div {
+    width: 62px;
+    height: 62px;
+    margin: 50px auto 0;
+    background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+    background-size: 440px 411px;
+    background-position: -189px -288px;
+    background-repeat: no-repeat;
+  }
   main {
     width: 290px;
     height: 206px;
-    margin: 60px auto 44px;
+    margin: 0 auto 44px;
     padding: 0 44px;
   }
   h3 {
