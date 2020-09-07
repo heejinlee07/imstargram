@@ -5,6 +5,7 @@ const HomeContainer = () => {
   return (
     <div>
       <Home />
+      <div>하이하이</div>
     </div>
   );
 };
