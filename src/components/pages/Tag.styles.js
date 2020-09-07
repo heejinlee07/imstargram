@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const SavedWrap = styled.div`
+export const TagWrap = styled.div`
   width: 935px;
   margin: 0 auto;
   padding: 30 20 0;
   text-align: center;
   main {
-    width: 340px;
+    width: 290px;
     height: 206px;
     margin: 60px auto 44px;
     padding: 0 44px;
