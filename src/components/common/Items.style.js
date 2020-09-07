@@ -6,9 +6,11 @@ import {
   bodyBgtGrey,
 } from '../../styles/variables';
 
-export const ItemWrap = styled.div`
+export const ItemWrap = styled.button`
   position: relative;
+  width: 100%;
   padding-top: 100%;
+  border: 0;
 `;
 
 export const ItemsUi = styled.div`
