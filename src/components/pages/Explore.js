@@ -1,11 +1,13 @@
 import React from 'react';
+import { ExploreWrap } from './Explore.styles';
 import ExploreTemplete from '../explore/ExploreTemplete';
 
 const Explore = () => {
   return (
-    <div>
+    <ExploreWrap>
       <ExploreTemplete />
-    </div>
+    </ExploreWrap>
   );
 };
+
 export default Explore;

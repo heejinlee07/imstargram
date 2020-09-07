@@ -12,9 +12,19 @@ import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
+import HeaderLikeModal from './HeaderLikeModal';
 
 const Header = () => {
   const [navState, setNavState] = useState(false);
+  const [navLikeState, setNavLikeState] = useState(false);
+
+  const onClickProfile = () => {
+    navState === true ? setNavState(false) : setNavState(true);
+  };
+
+  const onClickLike = () => {
+    navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
+  }
 
   const state = {
     home: true,
@@ -60,12 +70,12 @@ const Header = () => {
     navState
       ? setActive(state)
       : setActive({
-          home: false,
-          direct: false,
-          findpeople: false,
-          heart: true,
-          profile: false,
-        });
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: true,
+        profile: false,
+      });
   };
 
   const clickProfile = () => {
@@ -73,18 +83,16 @@ const Header = () => {
     navState
       ? setActive(test)
       : setActive({
-          home: false,
-          direct: false,
-          findpeople: false,
-          heart: false,
-          profile: true,
-        });
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: false,
+        profile: true,
+      });
     console.log(test);
   };
 
-  const onClick = () => {
-    navState === true ? setNavState(false) : setNavState(true);
-  };
+
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -92,7 +100,7 @@ const Header = () => {
           <Logo>I'mstargram</Logo>
           <div>
             <Inputs
-              InputWidth={176}
+              InputWidth={215}
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
@@ -108,8 +116,8 @@ const Header = () => {
                 {isActive.home === false ? (
                   <path d={iconList.inactiveHome}></path>
                 ) : (
-                  <path d={iconList.activeHome}></path>
-                )}
+                    <path d={iconList.activeHome}></path>
+                  )}
               </SvgIcon>
             </Link>
           </li>
@@ -119,8 +127,8 @@ const Header = () => {
                 {isActive.direct === false ? (
                   <path d={iconList.inactivePaperPlane}></path>
                 ) : (
-                  <path d={iconList.activePaperPlane}></path>
-                )}
+                    <path d={iconList.activePaperPlane}></path>
+                  )}
               </SvgIcon>
             </Link>
           </li>
@@ -130,22 +138,22 @@ const Header = () => {
                 {isActive.findpeople === false ? (
                   <path d={iconList.inactiveFindPeople}></path>
                 ) : (
-                  <path d={iconList.activeFindPeople}></path>
-                )}
+                    <path d={iconList.activeFindPeople}></path>
+                  )}
               </SvgIcon>
             </Link>
           </li>
-          <li onClick={onClick}>
+          <li onClick={onClickLike}>
             <SvgIcon aria-label="활동 피드" onClick={clickHeart}>
               {isActive.heart === false ? (
                 <path d={iconList.inactiveHeart}></path>
               ) : (
-                <path d={iconList.activeHeart}></path>
-              )}
+                  <path d={iconList.activeHeart}></path>
+                )}
             </SvgIcon>
           </li>
-          {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>
+          {navLikeState ? <HeaderLikeModal /> : null}
+          <li onClick={onClickProfile}>
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>
           {navState ? <HeaderModal /> : null}

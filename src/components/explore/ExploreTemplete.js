@@ -1,11 +1,12 @@
 import React from 'react';
+import Items from '../common/Items';
 
 export default function ExploreTemplete() {
   return (
     <ul>
-      <li>리스트1</li>
-      <li>리스트2</li>
-      <li>리스트3</li>
+      <li style={{ width: '30%' }}>
+        <Items />
+      </li>
     </ul>
   );
 }
