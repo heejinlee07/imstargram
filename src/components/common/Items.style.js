@@ -6,11 +6,19 @@ import {
   buttonSkyBlue,
 } from '../../styles/variables';
 
+export const ItemWrap = styled.div`
+  position: relative;
+  padding-top: 100%;
+`;
+
 export const ItemsUi = styled.div`
+  position: absolute;
+  top: 0%;
+  left: 0%;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 200px;
+  height: 100%;
   color: ${fontColorWhite};
   background: ${buttonSkyBlue};
   cursor: pointer;
