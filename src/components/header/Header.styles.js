@@ -25,6 +25,11 @@ export const HeaderBlock = styled.div`
   }
 `;
 
+export const Logo = styled.h1`
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+`;
+
 export const HeaderNav = styled.ul`
   display: flex;
   justify-content: space-between;
