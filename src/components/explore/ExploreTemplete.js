@@ -5,7 +5,7 @@ export default function ExploreTemplete() {
   return (
     <ul>
       <li style={{ width: '30%' }}>
-        <Items />
+        <Items imgUrl="https://picsum.photos/id/1018/1000/600/" />
       </li>
     </ul>
   );

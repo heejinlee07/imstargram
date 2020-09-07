@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   bodyBgBlack,
   fontColorWhite,
-  buttonSkyBlue,
+  bodyBgtGrey,
 } from '../../styles/variables';
 
 export const ItemWrap = styled.div`
@@ -20,7 +20,10 @@ export const ItemsUi = styled.div`
   width: 100%;
   height: 100%;
   color: ${fontColorWhite};
-  background: ${buttonSkyBlue};
+  background: ${(props) =>
+    props.url
+      ? `url(${props.url}) no-repeat center/cover, ${bodyBgtGrey}`
+      : `${bodyBgtGrey}`};
   cursor: pointer;
 
   div {
@@ -30,7 +33,10 @@ export const ItemsUi = styled.div`
   &:hover {
     background: linear-gradient(${bodyBgBlack + 80}, ${bodyBgBlack + 80})
         no-repeat center/100%,
-      ${buttonSkyBlue};
+      ${(props) =>
+        props.url
+          ? `url(${props.url}) no-repeat center/cover, ${bodyBgtGrey}`
+          : `${bodyBgtGrey}`};
 
     div {
       opacity: 100;
