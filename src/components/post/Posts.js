@@ -2,7 +2,7 @@ import React from 'react';
 import Cards from '../common/Cards';
 import PostHeader from './PostHeader';
 import PostContents from './PostContents';
-import PostComments from './PostComments';
+import PostCommentList from './PostCommentList';
 
 function Posts() {
   return (
@@ -10,7 +10,7 @@ function Posts() {
       <Cards padding={'0'}>
         <PostHeader />
         <PostContents />
-        <PostComments />
+        <PostCommentList />
       </Cards>
     </div>
   );
