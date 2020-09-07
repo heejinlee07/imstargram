@@ -3,13 +3,13 @@ import { bodyBgWhite, borderGrey } from '../../styles/variables';
 
 export const CardUi = styled.div`
   width: ${(props) => props.width || 100}%;
-  height: ${(props) => props.height || 100}%;
+  height: ${(props) => props.height || 'auto'};
   background-color: ${(props) => props.bgColor || bodyBgWhite};
   color: ${(props) => props.color};
   text-decoration: none;
   text-align: left;
-  padding: ${(props) => props.padding}px;
-  margin: ${(props) => props.margin}px;
+  padding: ${(props) => props.padding || '0px 0px 0px 0px'};
+  margin: ${(props) => props.margin || '0px 0px 0px 0px'};
   border-radius: ${(props) => props.borderRadius || 4}px;
   border: ${(props) => props.borderWeight || 1}px solid
     ${(props) => props.borderColor || borderGrey};
