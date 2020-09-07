@@ -31,9 +31,6 @@ function PostCommentList() {
   const onKeyPress = (e) => {
     if (e.key !== 'Enter') return;
     createComment();
-    // todo: setComment와 같은걸로 값을 초기화 하고자 한다면,
-    // input element를 controlled element로 바꿔줘야 한다
-    // 결국, onChange를 넣으려면, value를 꼭 같이 써줘야 한다
   };
 
   const onChange = (e) => {
@@ -51,9 +48,6 @@ function PostCommentList() {
     setComment('');
   };
 
-  /**
-   * todo: 그렇기 때문에 해당 함수는 매개변수를 받도록 설정해야한다
-   */
   const _deleteComment = async (id) => {
     console.log(id);
     await deleteComment(id);
