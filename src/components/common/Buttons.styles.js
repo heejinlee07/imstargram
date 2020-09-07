@@ -11,6 +11,7 @@ export const ButtonUi = styled.button`
   margin: ${(props) => props.margin || 0}px;
   border-radius: ${(props) => props.borderRadius || 4}px;
   background-color: ${(props) => props.bgColor || bodyBgWhite};
+  opacity: ${(props) => props.opacity || 1};
 `;
 
 export const WhiteButtonUi = styled(ButtonUi)`
