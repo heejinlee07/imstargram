@@ -12,7 +12,9 @@ const HeaderModal = () => {
           </li>
         </Link>
         <li>
-          <span>저장됨</span>
+          <Link to="/Personal/saved">
+            <span>저장됨</span>
+          </Link>
         </li>
         <Link to="/accounts">
           <li>

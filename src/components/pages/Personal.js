@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   PersonalWrap,
@@ -9,6 +9,17 @@ import {
 } from './Personal.styles';
 
 const Personal = () => {
+
+  const ProfileNavState = {
+    personal: true,
+    igtv: false,
+    saved: false,
+    tag: false,
+  };
+
+  const [navActive, setNavActive] = useState(ProfileNavState);
+
+
   return (
     <>
       <PersonalWrap>
