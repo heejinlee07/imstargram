@@ -1,6 +1,6 @@
 import React from 'react';
-import { Item } from '';
+import { ItemUi } from '';
 
 export default function Items() {
-  return <Item />;
+  return <ItemUi />;
 }

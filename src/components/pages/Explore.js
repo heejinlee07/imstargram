@@ -1,6 +1,11 @@
 import React from 'react';
+import ExploreTemplete from '../explore/ExploreTemplete';
 
 const Explore = () => {
-  return <div>Explore다</div>;
+  return (
+    <div>
+      <ExploreTemplete />
+    </div>
+  );
 };
 export default Explore;
