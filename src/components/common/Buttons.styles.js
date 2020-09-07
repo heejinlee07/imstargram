@@ -15,5 +15,6 @@ export const ButtonUi = styled.button`
 `;
 
 export const WhiteButtonUi = styled(ButtonUi)`
-  border: 1px solid transparent;
+  border: none;
+  font-weight: bold;
 `;
