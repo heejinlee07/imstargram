@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   PersonalWrap,
   Profile,
@@ -42,10 +43,30 @@ const Personal = () => {
         </main>
       </PersonalWrap>
       <ProfileNav>
-        <li><span></span>게시물</li>
-        <li><span></span>IGTV</li>
-        <li><span></span>저장됨</li>
-        <li><span></span>태그됨</li>
+        <li>
+          <Link to="/Personal">
+            <span></span>
+             게시물
+          </Link>
+        </li>
+        <li>
+          <Link to="/Personal/igtv">
+            <span></span>
+            IGTV
+          </Link>
+        </li>
+        <li>
+          <Link to="/Personal/saved">
+            <span></span>
+            저장됨
+          </Link>
+        </li>
+        <li>
+          <Link to="/Personal/tag">
+            <span></span>
+            태그됨
+          </Link>
+        </li>
       </ProfileNav>
     </>
   )

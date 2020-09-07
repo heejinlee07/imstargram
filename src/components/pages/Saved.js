@@ -4,7 +4,7 @@ import React from 'react';
 const Saved = () => {
   return (
     <div>
-      savedsaved
+      내가 저장을 했어.
     </div>
   );
 };
