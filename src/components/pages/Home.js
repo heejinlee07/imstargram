@@ -1,13 +1,14 @@
 import React from 'react';
 import SvgTest from '../../styles/SvgTest';
 import Posts from '../post/Posts';
+import { HomeWrap } from './Home.styles';
 
 const Home = () => {
   return (
-    <div>
+    <HomeWrap>
       <SvgTest />
       <Posts />
-    </div>
+    </HomeWrap>
   );
 };
 export default Home;
