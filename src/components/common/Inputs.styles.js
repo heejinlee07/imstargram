@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { bodyBgWhite, nonSelectGrey } from '../../styles/variables';
+import { bodyBgWhite, nonSelectGrey, borderGrey } from '../../styles/variables';
 
 export const InputUi = styled.input`
   width: ${(props) => props.width || 215}px;
@@ -9,9 +9,9 @@ export const InputUi = styled.input`
   text-decoration: none;
   font-size: ${(props) => props.fontSize || 16}px;
   padding: ${(props) => props.padding || '3px 10px 3px 26px'};
-  margin: ${(props) => props.margin || 3}px;
+  margin: ${(props) => props.margin || '3px 3px 3px 3px'};
   border-radius: ${(props) => props.borderRadius || 3}px;
-  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  border: solid 1px ${borderGrey};
   line-height: 18px;
 
   &::placeholder {

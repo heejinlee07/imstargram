@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  HomeIcon,
-  PaperPlaneIcon,
-  FindPeopleIcon,
-  HeartIcon,
-  ReplyIcon,
-  BookMarkIcon,
-} from './commonIcons/SvgIcons';
+import { SvgIcon } from './commonIcons/SvgIcons';
 import { iconList } from '../styles/commonIcons/path';
 
 const SvgTest = () => {
@@ -84,31 +77,31 @@ const SvgTest = () => {
 
   return (
     <div>
-      <HomeIcon onClick={clickHome}>
+      <SvgIcon aria-label="home" onClick={clickHome}>
         {isActive.home === false ? (
           <path d={iconList.inactiveHome}></path>
         ) : (
           <path d={iconList.activeHome}></path>
         )}
-      </HomeIcon>
+      </SvgIcon>
 
-      <PaperPlaneIcon aria-label="direct" onClick={clickDirect}>
+      <SvgIcon aria-label="direct" onClick={clickDirect}>
         {isActive.direct === false ? (
           <path d={iconList.inactivePaperPlane}></path>
         ) : (
           <path d={iconList.activePaperPlane}></path>
         )}
-      </PaperPlaneIcon>
+      </SvgIcon>
 
-      <FindPeopleIcon onClick={clickFindPeople}>
+      <SvgIcon aria-label="사람 찾기" onClick={clickFindPeople}>
         {isActive.findpeople === false ? (
           <path d={iconList.inactiveFindPeople}></path>
         ) : (
           <path d={iconList.activeFindPeople}></path>
         )}
-      </FindPeopleIcon>
+      </SvgIcon>
 
-      <HeartIcon
+      <SvgIcon
         fill={isActive.heart ? '#ed4956' : '#262626'}
         aria-label="활동 피드"
         onClick={clickHeart}
@@ -118,19 +111,19 @@ const SvgTest = () => {
         ) : (
           <path d={iconList.activeHeart}></path>
         )}
-      </HeartIcon>
+      </SvgIcon>
 
-      <ReplyIcon>
+      <SvgIcon aria-label="리플 달기">
         <path d={iconList.reply}></path>
-      </ReplyIcon>
+      </SvgIcon>
 
-      <BookMarkIcon onClick={clickBookMark}>
+      <SvgIcon aria-label="북마크" onClick={clickBookMark}>
         {isActive.bookmark === false ? (
           <path d={iconList.inactiveBookmark}></path>
         ) : (
           <path d={iconList.activeBookmark}></path>
         )}
-      </BookMarkIcon>
+      </SvgIcon>
     </div>
   );
 };
