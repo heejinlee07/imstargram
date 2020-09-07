@@ -17,6 +17,7 @@ export const InputUi = styled.input`
   &::placeholder {
     color: ${(props) => props.placeholderColor || nonSelectGrey};
     text-align: center;
+    vertical-align: middle;
     font-size: 13px;
     font-weight: 300;
   }

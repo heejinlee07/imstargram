@@ -112,8 +112,8 @@ const Header = () => {
                 {isActive.home === false ? (
                   <path d={iconList.inactiveHome}></path>
                 ) : (
-                    <path d={iconList.activeHome}></path>
-                  )}
+                  <path d={iconList.activeHome}></path>
+                )}
               </HomeIcon>
             </Link>
           </li>
@@ -123,8 +123,8 @@ const Header = () => {
                 {isActive.direct === false ? (
                   <path d={iconList.inactivePaperPlane}></path>
                 ) : (
-                    <path d={iconList.activePaperPlane}></path>
-                  )}
+                  <path d={iconList.activePaperPlane}></path>
+                )}
               </PaperPlaneIcon>
             </Link>
           </li>
@@ -134,8 +134,8 @@ const Header = () => {
                 {isActive.findpeople === false ? (
                   <path d={iconList.inactiveFindPeople}></path>
                 ) : (
-                    <path d={iconList.activeFindPeople}></path>
-                  )}
+                  <path d={iconList.activeFindPeople}></path>
+                )}
               </FindPeopleIcon>
             </Link>
           </li>
@@ -153,6 +153,10 @@ const Header = () => {
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>
           {navState ? <HeaderModal /> : null}
+          {/* 가입화면 테스트 연결페이지 */}
+          <li>
+            <Link to="/sign">Signin</Link>
+          </li>
         </HeaderNav>
       </HeaderBlock>
     </HeaderWrap>

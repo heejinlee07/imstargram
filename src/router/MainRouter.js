@@ -5,6 +5,7 @@ import DirectContainer from '../containers/DirectContainer';
 import ExploreContainer from '../containers/ExploreContainer';
 import PersonalContainer from '../containers/PersonalContainer';
 import AccountsContainer from '../containers/AccountsContainer';
+import SignIn from '../components/sign/SignIn';
 
 const MainRouter = () => {
   return (
@@ -14,6 +15,7 @@ const MainRouter = () => {
       <Route path="/explore" component={ExploreContainer} />
       <Route path="/personal" component={PersonalContainer} />
       <Route path="/accounts" component={AccountsContainer} />
+      <Route path="/sign" component={SignIn} />
     </Switch>
   );
 };
