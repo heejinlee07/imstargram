@@ -11,11 +11,11 @@ const HeaderModal = () => {
             <span>프로필</span>
           </li>
         </Link>
-        <li>
-          <Link to="/Personal/saved">
+        <Link to="/Personal/saved">
+          <li>
             <span>저장됨</span>
-          </Link>
-        </li>
+          </li>
+        </Link>
         <Link to="/accounts">
           <li>
             <span>설정</span>

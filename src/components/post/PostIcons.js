@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { PostIconsBlock, PostLikeCount } from './PostIcons.styles';
-import {
-  HeartIcon,
-  ReplyIcon,
-  PaperPlaneIcon,
-  BookmarkIcon,
-} from '../../styles/commonIcons/SvgIcons';
+import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { heartRed } from '../../styles/variables';
 
 import { iconList } from '../../styles/commonIcons/path';
@@ -33,21 +28,21 @@ export default function PostIcons() {
   return (
     <>
       <PostIconsBlock>
-        <HeartIcon
+        <SvgIcon
           onClick={clickHeart}
           fill={iconStatus.heart ? heartRed : undefined}
         >
           <path
             d={iconStatus.heart ? iconList.activeHeart : iconList.inactiveHeart}
           />
-        </HeartIcon>
-        <ReplyIcon onClick={clickReply}>
+        </SvgIcon>
+        <SvgIcon onClick={clickReply}>
           <path d={iconList.reply} />
-        </ReplyIcon>
-        <PaperPlaneIcon onClick={clickPaperPlane}>
+        </SvgIcon>
+        <SvgIcon onClick={clickPaperPlane}>
           <path d={iconList.inactivePaperPlane} />
-        </PaperPlaneIcon>
-        <BookmarkIcon onClick={clickBookmark}>
+        </SvgIcon>
+        <SvgIcon onClick={clickBookmark}>
           <path
             d={
               iconStatus.bookmark
@@ -55,7 +50,7 @@ export default function PostIcons() {
                 : iconList.inactiveBookmark
             }
           />
-        </BookmarkIcon>
+        </SvgIcon>
       </PostIconsBlock>
       {!likeCount || <PostLikeCount>좋아요 {likeCount}개</PostLikeCount>}
     </>
