@@ -155,7 +155,7 @@ const Header = () => {
           {navState ? <HeaderModal /> : null}
           {/* 가입화면 테스트 연결페이지 */}
           <li>
-            <Link to="/sign">Signin</Link>
+            <Link to="/signIndex">Signin</Link>
           </li>
         </HeaderNav>
       </HeaderBlock>
