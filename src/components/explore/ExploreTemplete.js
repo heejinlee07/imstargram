@@ -76,16 +76,16 @@ export default function ExploreTemplete() {
           <li>
             <ul>
               <li key="item0">
-                <Items imgUrl={url[0].original} />
+                <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
               </li>
               <li key="item1">
-                <Items imgUrl={a[1][0].original} />
+                <Items imgUrl={a[1][0].original} isCarousel={a[1].length > 1} />
               </li>
             </ul>
           </li>
         ) : (
           <li key={`item${i}`}>
-            <Items imgUrl={url[0].original} />
+            <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
           </li>
         );
       })}
@@ -94,7 +94,7 @@ export default function ExploreTemplete() {
     <ExploreTempleteUlLtTwo>
       {imageList.map((url, i) => (
         <li key={`item${i}`}>
-          <Items imgUrl={url[0].original} />
+          <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
         </li>
       ))}
     </ExploreTempleteUlLtTwo>

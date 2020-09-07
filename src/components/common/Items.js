@@ -12,15 +12,21 @@ import { fontColorWhite } from '../../styles/variables';
  * likeCount: 좋아요 수
  * replyCount: 댓글 수
  * imgUrl: 이미지 Url
+ * isCarousel: 케러셀 인지 여부
  *
  * 주의 사항]
  * - size는 조절 불가 무조건 width 100% 정사각형
  */
 
-export default function Items({ likeCount, replyCount, imgUrl }) {
+export default function Items({
+  likeCount,
+  replyCount,
+  imgUrl,
+  isCarousel = false,
+}) {
   return (
     <ItemWrap>
-      <ItemsUi url={imgUrl}>
+      <ItemsUi url={imgUrl} isCarousel={isCarousel}>
         <LikeUi>
           <SvgIcon fill={fontColorWhite}>
             <path d={iconList.activeHeart}></path>
@@ -29,7 +35,7 @@ export default function Items({ likeCount, replyCount, imgUrl }) {
         </LikeUi>
         <CommentUi>
           <SvgIcon fill={fontColorWhite}>
-            <path d={iconList.reply}></path>
+            <path d={iconList.activeReply}></path>
           </SvgIcon>
           <p>{replyCount || 0}</p>
         </CommentUi>
