@@ -9,7 +9,7 @@ export const InputUi = styled.input`
   text-decoration: none;
   font-size: ${(props) => props.fontSize || 16}px;
   padding: ${(props) => props.padding || '3px 10px 3px 26px'};
-  margin: ${(props) => props.margin || 3}px;
+  margin: ${(props) => props.margin || '3px 3px 3px 3px'};
   border-radius: ${(props) => props.borderRadius || 3}px;
   border: solid 1px ${borderGrey};
   line-height: 18px;
