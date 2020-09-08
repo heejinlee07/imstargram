@@ -13,12 +13,12 @@ import { getUserById } from '../../services/usersApi';
 import { getFollowingsByFollowerId } from '../../services/followInfoApi';
 
 function PostHeader({ post }) {
-  console.log('postid', post.userId);
+  // console.log('postid', post.userId);
 
   const getUser = useCallback(() => getUserById(post.userId), [post.userId]);
 
   const { data } = useApi(getUser);
-  console.log('data', data);
+  // console.log('data', data);
   return (
     <PostHeaderBlock>
       <PostInfo>

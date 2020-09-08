@@ -5,7 +5,7 @@ import PostContents from './PostContents';
 import PostCommentList from './PostCommentList';
 
 function Posts({ post }) {
-  console.log('post', post);
+  // console.log('post', post);
   return (
     <div>
       <Cards padding={'0'}>

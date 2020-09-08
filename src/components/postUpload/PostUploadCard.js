@@ -15,6 +15,11 @@ import {
 import { addPost, getPostsByUser } from '../../services/postsApi';
 import useApi from '../../hooks/useApi';
 import Posts from '../post/Posts';
+import styled from 'styled-components';
+
+const Hashtag = styled.div`
+  color: blue;
+`;
 
 function PostUploadCard() {
   const [activePhoto, setActivePhoto] = useState(false);
@@ -72,6 +77,8 @@ function PostUploadCard() {
   //todo: cards styles 사이즈 속성공통화 필요
   return (
     <PostUploadCardBlock>
+      {/* {hashtag(posted)} */}
+      <Hashtag></Hashtag>
       <Cards style={{ margin: '10px 0' }}>
         <PostUploadHeader>업로드 컴포넌트 만드는중임</PostUploadHeader>
         <Inputs
@@ -98,7 +105,7 @@ function PostUploadCard() {
         </ButtonBlock>
       </Cards>
       {posts?.map((post) => (
-        <Posts post={post} />
+        <Posts post={post} onChange={onChange} />
       ))}
     </PostUploadCardBlock>
   );

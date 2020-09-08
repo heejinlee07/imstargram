@@ -68,6 +68,83 @@
       "likeCount": 12,
       "uploadDate": "2020/09/04",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "text": "#stay with me #집 ㄹㄹㄹㄹㄹㄹ",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "text": "ddddd #ㄹㄹㄹㄹ ㅇㅇㅇㅇ",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "text": "dddd #ffff",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "text": "ddd #fff",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "text": "여행가기 #즐겁다 #ㄲㄲ ㄹㄹ",
+      "image": "https://images.unsplash.com/photo-1599522605463-7b78272a5879?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "text": "찰칵!",
+      "image": "https://images.unsplash.com/photo-1599507083573-764d693f75b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "text": "안녕? #ㄹㄹㄹ",
+      "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "text": "안녕 #ㄹㄹㄹ",
+      "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "text": "1Qkek fdfdfdfdfd",
+      "image": "https://images.unsplash.com/photo-1587614295506-f03c0e6f5b44?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 12
     }
   ],
   "comments": [
@@ -112,6 +189,13 @@
       "text": "이 시국에 스벅?",
       "uploadDate": "2020/09/04",
       "id": 6
+    },
+    {
+      "userId": 3,
+      "postId": 1,
+      "text": "ㅋㅋㅋ고양이 귀엽당",
+      "uploadDate": "2020/09/04",
+      "id": 7
     }
   ],
   "followInfos": [
