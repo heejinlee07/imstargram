@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemWrap, ItemsUi, LikeUi, CommentUi } from './Items.style';
+import { ItemWrap, ItemsUi, LikeUi, CommentUi } from './ThumbnailPost.style';
 
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';

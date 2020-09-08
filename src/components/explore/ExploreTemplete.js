@@ -1,5 +1,5 @@
 import React from 'react';
-import Items from '../common/Items';
+import Items from '../common/ThumbnailPost';
 
 import {
   ExploreTempleteUl,
