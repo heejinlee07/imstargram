@@ -31,7 +31,7 @@ export const IdWrap = styled.div`
   display: flex;
   height: 40px;
   margin-bottom: 20px;
-  div {
+  h3 {
     font-weight: 300;
     font-size: 28px;
   }
@@ -44,6 +44,10 @@ export const IdWrap = styled.div`
     border-radius: 4px;
     border: 1px solid rgb(219, 219, 219);
     background-color: ${(props) => props.bgColor || bodyBgWhite};
+  }
+  div {
+    margin-left: 13px;
+    line-height: 40px;
   }
 `
 
@@ -73,9 +77,13 @@ export const ProfileNav = styled.li`
   font-weight: 600;
   color: ${nonSelectGrey};
   li {
-    margin-right: 60px;
+    margin: 0 50px 3px;
+    letter-spacing: 1.5px;
+    span {
+      padding-right: 5px;
+    }
   }
   li:last-child {
-    margin: 0;
+    margin-right: 0;
   }
 `

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   HeaderProfileModal,
-  left
 } from './HeaderModal.styles';
 
 const HeaderLikeModal = () => {

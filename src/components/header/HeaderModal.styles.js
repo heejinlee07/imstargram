@@ -14,8 +14,13 @@ export const HeaderProfileModal = styled.ul`
      width: 170px;
      width: 100%;
      padding: 8px 16px;
-     font-size: 14px;
+     font-size: 15px;
      cursor: pointer;
+     align-items: center;
+     span {
+       display: inline-block;
+       padding-left: 10px;
+     }
    }
    li:hover {
     background-color: ${(props) => props.InputColor || borderGrey};

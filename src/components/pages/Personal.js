@@ -7,6 +7,8 @@ import {
   FollowWrap,
   ProfileNav
 } from './Personal.styles';
+import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
+import { iconList } from '../../styles/commonIcons/path';
 
 const Personal = () => {
 
@@ -20,11 +22,15 @@ const Personal = () => {
           </header>
           <div>
             <IdWrap>
-              <div>아이디</div>
+              <h3>아이디</h3>
               <button>
                 프로필 편집
               </button>
-              <div></div>
+              <div>
+                <SvgIcon aria-label="설정">
+                  <path d={iconList.setUp}></path>
+                </SvgIcon>
+              </div>
             </IdWrap>
             <FollowWrap>
               <li>
@@ -46,25 +52,57 @@ const Personal = () => {
       <ProfileNav>
         <li>
           <Link to="/Personal">
-            <span></span>
-             게시물
+            <span>
+              <SvgIcon
+                aria-label="게시물"
+                width={12}
+                height={12}
+              >
+                <path d={iconList.post}></path>
+              </SvgIcon>
+            </span>
+            게시물
           </Link>
         </li>
         <li>
           <Link to="/Personal/igtv">
-            <span></span>
+            <span>
+              <SvgIcon
+                aria-label="IGTV"
+                width={12}
+                height={12}
+              >
+                <path d={iconList.igtv}></path>
+              </SvgIcon>
+            </span>
             IGTV
           </Link>
         </li>
         <li>
           <Link to="/Personal/saved">
-            <span></span>
+            <span>
+              <SvgIcon
+                aria-label="저장됨"
+                width={12}
+                height={12}
+              >
+                <path d={iconList.saved}></path>
+              </SvgIcon>
+            </span>
             저장됨
           </Link>
         </li>
         <li>
           <Link to="/Personal/tag">
-            <span></span>
+            <span>
+              <SvgIcon
+                aria-label="태그됨"
+                width={12}
+                height={12}
+              >
+                <path d={iconList.tag}></path>
+              </SvgIcon>
+            </span>
             태그됨
           </Link>
         </li>
