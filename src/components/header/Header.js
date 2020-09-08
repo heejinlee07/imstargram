@@ -92,7 +92,11 @@ const Header = () => {
     console.log(test);
   };
 
-
+  const searchKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      return e.target.value = "";
+    }
+  }
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -104,6 +108,8 @@ const Header = () => {
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
+              onKeyDown={searchKeyDown}
+              title="검색"
             />
             <span></span>
             <div></div>

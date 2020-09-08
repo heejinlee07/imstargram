@@ -32,3 +32,13 @@ export const HeaderProfileModal = styled.ul`
      border-top: 1px solid #dbdbdb;
    }
 `;
+
+export const SquareShape = styled.div`
+  position: absolute;
+  top: 46px;
+  right: 66px;
+  width: 14px;
+  height: 14px;
+  background: rgba(var(--d87,255,255,255),1);
+  transform: rotate(45deg);
+`;
