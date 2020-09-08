@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { borderGrey } from '../../styles/variables';
 
 export const PostIconsBlock = styled.div`
   display: flex;
+  margin: 10px 0;
 
   & svg:last-child {
     margin-left: auto;
@@ -12,4 +12,5 @@ export const PostIconsBlock = styled.div`
 export const PostLikeCount = styled.button`
   margin: 0;
   border: none;
+  font-weight: bold;
 `;
