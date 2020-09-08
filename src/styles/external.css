@@ -1,1 +1,10 @@
 @import '~react-image-gallery/styles/css/image-gallery.css';
+
+.image-gallery-image {
+  max-height: 300px !important;
+}
+
+.image-gallery-thumbnail-image {
+  max-height: 50px !important;
+  object-fit: contain;
+}

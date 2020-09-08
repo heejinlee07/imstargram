@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Unsplash from 'unsplash-js';
 import { unsplashKey } from '../../services/unsplashKey';
 import unsplashApi from '../../services/unsplashApi';
@@ -12,29 +12,19 @@ import {
   PostUploadHeader,
   ButtonBlock,
 } from './PostUploadCard.styles';
-import { addPost, getPostsByUser } from '../../services/postsApi';
-import useApi from '../../hooks/useApi';
-import Posts from '../post/Posts';
-import styled from 'styled-components';
+import { addPost } from '../../services/postsApi';
 
-const Hashtag = styled.div`
-  color: blue;
-`;
-
-function PostUploadCard() {
+function PostUploadCard({ invokePosts }) {
   const [activePhoto, setActivePhoto] = useState(false);
   const [image, setImage] = useState();
   const [posted, setPosted] = useState('');
   const [selectedPhoto, setSelectedPhoto] = useState();
 
-  const unsplash = new Unsplash({ accessKey: unsplashKey });
-  // console.log(unsplash);
-
   useEffect(() => {
     async function getPhotos() {
       try {
         const { data } = await unsplashApi.get(
-          `/photos?client_id=${unsplashKey}&w=400&h=300&fit=max`
+          `/photos?client_id=${unsplashKey}&w=400&h=300&fit=crop`
         );
         setImage(data);
         console.log(data);
@@ -44,9 +34,6 @@ function PostUploadCard() {
     }
     getPhotos();
   }, []);
-  const userId = 1;
-  const getPosts = useCallback(() => getPostsByUser(userId), [userId]);
-  const { data: posts, invoke: invokePosts } = useApi(getPosts);
 
   const onSelect = (src) => {
     console.log('Selected', src);
@@ -59,17 +46,14 @@ function PostUploadCard() {
   };
 
   const createPost = async () => {
-    await addPost(
-      {
-        userId: 1,
-        text: posted,
-        image: selectedPhoto,
-        location: '서울',
-        likeCount: 12,
-        uploadDate: '2020/09/04',
-      },
-      { ...posts }
-    );
+    await addPost({
+      userId: 1,
+      text: posted,
+      image: selectedPhoto,
+      location: '서울',
+      likeCount: 12,
+      uploadDate: '2020/09/04',
+    });
     await invokePosts();
     setPosted('');
   };
@@ -77,8 +61,6 @@ function PostUploadCard() {
   //todo: cards styles 사이즈 속성공통화 필요
   return (
     <PostUploadCardBlock>
-      {/* {hashtag(posted)} */}
-      <Hashtag></Hashtag>
       <Cards style={{ margin: '10px 0' }}>
         <PostUploadHeader>업로드 컴포넌트 만드는중임</PostUploadHeader>
         <Inputs
@@ -104,9 +86,6 @@ function PostUploadCard() {
           )}
         </ButtonBlock>
       </Cards>
-      {posts?.map((post) => (
-        <Posts post={post} onChange={onChange} />
-      ))}
     </PostUploadCardBlock>
   );
 }

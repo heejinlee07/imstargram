@@ -9,11 +9,11 @@ import AccountsContainer from '../containers/AccountsContainer';
 const MainRouter = () => {
   return (
     <Switch>
-      <Route exact path="/" component={HomeContainer} />
       <Route path="/direct" component={DirectContainer} />
       <Route path="/explore" component={ExploreContainer} />
       <Route path="/personal" component={PersonalContainer} />
       <Route path="/accounts" component={AccountsContainer} />
+      <Route path="/user/:userId" component={HomeContainer} />
     </Switch>
   );
 };

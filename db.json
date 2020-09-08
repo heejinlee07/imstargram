@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "1리액트",
+      "name": "12리액트",
       "password": "aaa",
       "email": "hello@gmail.com",
       "profileImage": "something url",
@@ -111,7 +111,7 @@
       "id": 8
     },
     {
-      "userId": 1,
+      "userId": 2,
       "text": "찰칵!",
       "image": "https://images.unsplash.com/photo-1599507083573-764d693f75b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
@@ -120,7 +120,7 @@
       "id": 9
     },
     {
-      "userId": 1,
+      "userId": 3,
       "text": "안녕? #ㄹㄹㄹ",
       "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
@@ -129,7 +129,7 @@
       "id": 10
     },
     {
-      "userId": 1,
+      "userId": 2,
       "text": "안녕 #ㄹㄹㄹ",
       "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
@@ -145,6 +145,24 @@
       "likeCount": 12,
       "uploadDate": "2020/09/04",
       "id": 12
+    },
+    {
+      "userId": 1,
+      "text": "찰칵",
+      "image": "https://images.unsplash.com/photo-1599429730140-84a40a58b391?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "text": "asdfasdf",
+      "image": "https://images.unsplash.com/photo-1599542907553-40360fa056bc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 14
     }
   ],
   "comments": [

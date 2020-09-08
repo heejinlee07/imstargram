@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import PostCarousel from './PostCarousel';
 import PostIcons from './PostIcons';
 import PhotoSelect from '../postUpload/PhotoSelect';
-import { PostPhoto, PostText, HashTag } from './PostContent.styles';
+import { PostPhoto, PostText } from './PostContent.styles';
 import { WhiteButtons } from '../common/Buttons';
+import { linkBlue } from '../../styles/variables';
 
 function PostContents({ post }) {
-  console.log('post', post);
-
+  //todo: 한줄로 정리 split.map~~~이런식으로
+  // 또는 함수에 {}쓰지말고 바로 연결해서 할 수 있다.
   const hashtagStyle = (hashtag) => {
     // let hash = hashtag;
     // console.log(hash);
 
-    const pattern = '#';
-
-    for (let i = 0; i < hashtag.length; i++) {
-      if (hashtag.match(pattern)) {
-        console.log('hi');
-        return <HashTag>{hashtag}</HashTag>;
-      } else {
-        return <PostText>{post.text}</PostText>;
+    const hashtagList = hashtag.split(' ');
+    return hashtagList.map((tag) => {
+      if (tag.match('#')) {
+        return (
+          <WhiteButtons color={linkBlue} fontWeight={'normal'}>
+            {tag}
+          </WhiteButtons>
+        );
       }
-    }
+      return <PostText>{tag}</PostText>;
+    });
   };
 
   return (
