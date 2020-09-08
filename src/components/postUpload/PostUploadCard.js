@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Unsplash from 'unsplash-js';
 import { unsplashKey } from '../../services/unsplashKey';
 import unsplashApi from '../../services/unsplashApi';
 import Cards from '../common/Cards';
