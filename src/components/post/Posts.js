@@ -4,12 +4,13 @@ import PostHeader from './PostHeader';
 import PostContents from './PostContents';
 import PostCommentList from './PostCommentList';
 
-function Posts() {
+function Posts({ post }) {
+  console.log('post', post);
   return (
     <div>
       <Cards padding={'0'}>
-        <PostHeader />
-        <PostContents />
+        <PostHeader post={post} />
+        <PostContents post={post} />
         <PostCommentList />
       </Cards>
     </div>

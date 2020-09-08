@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ImageGallery from 'react-image-gallery';
-
 function PhotoSelect({ image, onSelect }) {
+  console.log('image', image);
   const imageList = image?.map((item) => ({
     original: item.urls.small,
     thumbnail: item.urls.thumb,
@@ -17,5 +18,10 @@ function PhotoSelect({ image, onSelect }) {
     />
   );
 }
+
+PhotoSelect.propTypes = {
+  image: PropTypes.array,
+  onSelect: PropTypes.func.isRequired,
+};
 
 export default PhotoSelect;

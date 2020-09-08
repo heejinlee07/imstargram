@@ -9,7 +9,6 @@ import {
 import { heartRed } from '../../styles/variables';
 
 import { iconList } from '../../styles/commonIcons/path';
-import useApi from '../../hooks/useApi';
 
 export default function PostIcons() {
   const [count, setCount] = useState(1);
