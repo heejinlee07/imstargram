@@ -7,5 +7,6 @@ export const PostPhoto = styled.img`
 
 export const PostText = styled.div`
   display: flex;
-  margin: 8px 0;
+  flex-wrap: wrap;
+  margin: 5px 0;
 `;

@@ -87,6 +87,7 @@ function PostCommentList() {
           placeholder="댓글달기..."
           textAlign={'left'}
           padding={3}
+          margin={'0'}
           color={fontColorBlack}
           fontSize={14}
           border={'none'}

@@ -12,7 +12,7 @@ function Post({ post }) {
 
   return (
     <div>
-      <Cards padding={'0'}>
+      <Cards padding={'0'} margin={'20px 0'}>
         <PostHeader post={post} user={user} />
         <PostContents post={post} user={user} />
         <PostCommentList />

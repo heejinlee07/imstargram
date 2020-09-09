@@ -95,6 +95,15 @@
       "likeCount": 12,
       "uploadDate": "2020/09/04",
       "id": 6
+    },
+    {
+      "userId": 6,
+      "text": "생각중",
+      "image": "https://images.unsplash.com/photo-1584046031127-ea4d25c817fe?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 7
     }
   ],
   "comments": [

@@ -42,6 +42,8 @@ const PostComment = ({ comment, _editComment, _deleteComment }) => {
             >
               수정하기
             </WhiteButtons>
+            {/* <span class="material-icons">edit</span>
+            <span class="material-icons">delete</span> */}
             <div onClick={() => _deleteComment(comment.id)}>
               <WhiteButtons
                 fontWeight={'normal'}
