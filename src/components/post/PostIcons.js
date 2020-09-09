@@ -40,21 +40,21 @@ export default function PostIcons() {
     <>
       <PostIconsBlock>
         {likeToggle ? (
-          <HeartIcon onClick={clickHeart} fill={heartRed}>
+          <HeartIcon margin={'0 5px'} onClick={clickHeart} fill={heartRed}>
             <path d={iconList.activeHeart} />
           </HeartIcon>
         ) : (
-          <HeartIcon onClick={UnClickHeart} fill={undefined}>
+          <HeartIcon margin={'0 5px'} onClick={UnClickHeart} fill={undefined}>
             <path d={iconList.inactiveHeart} />
           </HeartIcon>
         )}
-        <ReplyIcon onClick={clickReply}>
+        <ReplyIcon margin={'0 5px'} onClick={clickReply}>
           <path d={iconList.reply} />
         </ReplyIcon>
-        <PaperPlaneIcon onClick={clickPaperPlane}>
+        <PaperPlaneIcon margin={'0 5px'} onClick={clickPaperPlane}>
           <path d={iconList.inactivePaperPlane} />
         </PaperPlaneIcon>
-        <BookmarkIcon onClick={clickBookmark}>
+        <BookmarkIcon margin={'0 5px'} onClick={clickBookmark}>
           <path
             d={
               iconStatus.bookmark

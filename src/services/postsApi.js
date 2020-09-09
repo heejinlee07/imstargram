@@ -1,6 +1,13 @@
 import api from './api';
 
 // posts CRUD
+
+//전체 post GET
+export const getPosts = () => {
+  return api.get(`/posts`);
+};
+
+//userId별로 GET
 export const getPostsByUser = (userId) => {
   return api.get(`/posts?userId=${userId}`);
 };
