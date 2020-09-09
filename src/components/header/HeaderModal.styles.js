@@ -9,6 +9,7 @@ export const HeaderProfileModal = styled.ul`
    left: ${(props) => props.left || 0}px;
    border-radius: 6px;
    text-align: left;
+   z-index: 1;
    li, div {
      display: block;
      width: 170px;
@@ -31,14 +32,4 @@ export const HeaderProfileModal = styled.ul`
    div {
      border-top: 1px solid #dbdbdb;
    }
-`;
-
-export const SquareShape = styled.div`
-  position: absolute;
-  top: 46px;
-  right: 66px;
-  width: 14px;
-  height: 14px;
-  background: rgba(var(--d87,255,255,255),1);
-  transform: rotate(45deg);
 `;

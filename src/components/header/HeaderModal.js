@@ -1,12 +1,11 @@
 import React from 'react';
-import { HeaderProfileModal, SquareShape } from './HeaderModal.styles';
+import { HeaderProfileModal } from './HeaderModal.styles';
 import { Link } from 'react-router-dom';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from "../../styles/commonIcons/path";
 const HeaderModal = () => {
   return (
     <div>
-
       <HeaderProfileModal>
         <Link to="/personal">
           <li>
@@ -47,7 +46,6 @@ const HeaderModal = () => {
         </Link>
         <div>로그아웃</div>
       </HeaderProfileModal>
-      {/* <SquareShape></SquareShape> */}
     </div>
   );
 };

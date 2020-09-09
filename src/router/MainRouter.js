@@ -15,7 +15,7 @@ const MainRouter = () => {
       <Route path="/personal" component={PersonalContainer} />
       <Route path="/accounts" component={AccountsContainer} />
       <Route path="/signIndex" component={SignIndex} />
-      <Route path="/user/:userId" component={HomeContainer} />
+      <Route exact path="/" component={HomeContainer} />
     </Switch>
   );
 };

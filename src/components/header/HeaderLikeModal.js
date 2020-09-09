@@ -14,7 +14,7 @@ const HeaderLikeModal = () => {
         <ul>
           <li>누가좋아요</li>
           <li>팔로우했어요</li>
-          <li>부자되고싶어요</li>
+          <li></li>
         </ul>
       </HeaderProfileModal>
     </div>

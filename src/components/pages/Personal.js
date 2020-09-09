@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import {
   PersonalWrap,
   Profile,
   IdWrap,
   FollowWrap,
-  ProfileNav
+  ProfileNav,
 } from './Personal.styles';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
@@ -108,6 +108,6 @@ const Personal = () => {
         </li>
       </ProfileNav>
     </>
-  )
+  );
 };
 export default Personal;

@@ -15,6 +15,7 @@ import { iconList } from '../../styles/commonIcons/path';
 import HeaderLikeModal from './HeaderLikeModal';
 
 const Header = () => {
+
   const [navState, setNavState] = useState(false);
   const [navLikeState, setNavLikeState] = useState(false);
 
@@ -24,7 +25,7 @@ const Header = () => {
 
   const onClickLike = () => {
     navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
-  }
+  };
 
   const state = {
     home: true,
@@ -98,6 +99,7 @@ const Header = () => {
       // 수정 예정
     }
   }
+
   return (
     <HeaderWrap>
       <HeaderBlock>
@@ -149,7 +151,10 @@ const Header = () => {
               </SvgIcon>
             </Link>
           </li>
-          <li onClick={onClickLike}>
+          <li onClick={(e) => {
+            onClickLike();
+          }
+          }>
             <SvgIcon aria-label="활동 피드" onClick={clickHeart}>
               {isActive.heart === false ? (
                 <path d={iconList.inactiveHeart}></path>
@@ -158,7 +163,7 @@ const Header = () => {
                 )}
             </SvgIcon>
           </li>
-          {navLikeState ? <HeaderLikeModal /> : null}
+          {navLikeState && <HeaderLikeModal />}
           <li onClick={onClickProfile}>
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>
