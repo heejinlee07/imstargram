@@ -57,8 +57,16 @@ const PostComment = ({ comment, _editComment, _deleteComment }) => {
         <>
           <Inputs
             fontSize={14}
+<<<<<<< HEAD
             margin={'0'}
             padding={2}
+=======
+<<<<<<< HEAD
+=======
+            margin={'0'}
+            padding={2}
+>>>>>>> 965a320ba2a636290470d99ae2477f12dee337b2
+>>>>>>> feature/likeIcon
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
             onKeyPress={editContents}
