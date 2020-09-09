@@ -5,7 +5,7 @@ import ExploreTemplete from '../explore/ExploreTemplete';
 const Explore = () => {
   return (
     <ExploreWrap>
-      <ExploreTemplete />
+      <ExploreTemplete pageNum={1} />
     </ExploreWrap>
   );
 };

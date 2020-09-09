@@ -9,58 +9,59 @@ import {
 
 import { getRandomPost } from '../../services/postsApi';
 
-export default function ExploreTemplete() {
-  const [pageNum, setPage] = useState(1);
+export default function ExploreTemplete({ pageNum }) {
   const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
   const { data: posts } = useApi(getRandom);
 
-  console.log(posts);
-
-  return posts !== undefined ? (
-    posts.length > 2 ? (
-      <ExploreTempleteUl>
-        {posts.map((post, i, a) => {
-          if (i === 1) return;
-          return i === 0 ? (
-            <li>
-              <ul>
-                <li key="item0">
-                  <Items
-                    imgUrl={post.image}
-                    // isCarousel={post.image.length > 1}
-                  />
-                </li>
-                <li key="item1">
-                  <Items
-                    imgUrl={a[1].image}
-                    // isCarousel={a[1].image.length > 1}
-                  />
-                </li>
-              </ul>
-            </li>
-          ) : (
-            <li key={`item${i}`}>
-              <Items
-                imgUrl={post.image}
-                // isCarousel={post.image.length > 1}
-              />
-            </li>
-          );
-        })}
-      </ExploreTempleteUl>
-    ) : (
-      <ExploreTempleteUlLtTwo>
-        {posts.map((post, i) => (
+  return posts === undefined ? (
+    <div>로딩중...</div>
+  ) : posts.length > 2 ? (
+    <ExploreTempleteUl>
+      {posts.map((post, i, a) => {
+        if (i === 1) return;
+        return i === 0 ? (
+          <li key="itemWrap">
+            <ul>
+              <li key="item0">
+                <Items
+                  likeCount={post.likeCount}
+                  replyCount={0}
+                  imgUrl={post.image}
+                  // isCarousel={post.image.length > 1}
+                />
+              </li>
+              <li key="item1">
+                <Items
+                  likeCount={post.likeCount}
+                  replyCount={0}
+                  imgUrl={a[1].image}
+                  // isCarousel={a[1].image.length > 1}
+                />
+              </li>
+            </ul>
+          </li>
+        ) : (
           <li key={`item${i}`}>
             <Items
+              likeCount={post.likeCount}
+              replyCount={0}
               imgUrl={post.image}
               // isCarousel={post.image.length > 1}
             />
           </li>
-        ))}
-      </ExploreTempleteUlLtTwo>
-    )
+        );
+      })}
+    </ExploreTempleteUl>
   ) : (
-    <div>로딩중...</div>
+    <ExploreTempleteUlLtTwo>
+      {posts.map((post, i) => (
+        <li key={`item${i}`}>
+          <Items
+            imgUrl={post.image}
+            // isCarousel={post.image.length > 1}
+          />
+        </li>
+      ))}
+    </ExploreTempleteUlLtTwo>
   );
 }
