@@ -17,73 +17,73 @@ export const SvgIcon = ({ children, ...rest }) => {
   );
 };
 
-// export const HomeIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle aria-label="홈" viewBox="0 0 48 48" {...rest}>
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const HomeIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle aria-label="홈" viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const PaperPlaneIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle viewBox="0 0 48 48" {...rest}>
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const PaperPlaneIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const FindPeopleIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle aria-label="사람 찾기" viewBox="0 0 48 48" {...rest}>
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const FindPeopleIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle aria-label="사람 찾기" viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const HeartIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle viewBox="0 0 48 48" {...rest}>
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const HeartIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const BookmarkIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle aria-label="저장" viewBox="0 0 48 48" {...rest}>
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const BookmarkIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle aria-label="저장" viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const ReplyIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle
-//       width={24}
-//       height={24}
-//       aria-label="댓글 달기"
-//       viewBox="0 0 48 48"
-//       {...rest}
-//     >
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const ReplyIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle
+      width={24}
+      height={24}
+      aria-label="댓글 달기"
+      viewBox="0 0 48 48"
+      {...rest}
+    >
+      {children}
+    </SvgStyle>
+  );
+};
 
-// export const BookMarkIcon = ({ children, ...rest }) => {
-//   return (
-//     <SvgStyle
-//       width={24}
-//       height={24}
-//       aria-label="저장"
-//       viewBox="0 0 48 48"
-//       {...rest}
-//     >
-//       {children}
-//     </SvgStyle>
-//   );
-// };
+export const BookMarkIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle
+      width={24}
+      height={24}
+      aria-label="저장"
+      viewBox="0 0 48 48"
+      {...rest}
+    >
+      {children}
+    </SvgStyle>
+  );
+};
 
 // post 더보기 버튼
 export const MoreIcon = ({ ...rest }) => {
