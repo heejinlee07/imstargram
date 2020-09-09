@@ -5,7 +5,7 @@ import Cards from '../common/Cards';
 import Inputs from '../common/Inputs';
 import { WhiteButtons } from '../common/Buttons';
 import PhotoSelect from './PhotoSelect';
-
+import { generateId } from '../../utils/generateId';
 import {
   PostUploadCardBlock,
   PostUploadHeader,
@@ -13,7 +13,7 @@ import {
 } from './PostUploadCard.styles';
 import { addPost } from '../../services/postsApi';
 
-function PostUploadCard({ invokePosts }) {
+function PostUploadCard({ invokePosts, users }) {
   const [activePhoto, setActivePhoto] = useState(false);
   const [image, setImage] = useState();
   const [posted, setPosted] = useState('');
@@ -26,7 +26,7 @@ function PostUploadCard({ invokePosts }) {
           `/photos?client_id=${unsplashKey}&w=400&h=300&fit=crop`
         );
         setImage(data);
-        console.log(data);
+        // console.log(data);
       } catch (e) {
         console.log(e.message);
       }
@@ -34,19 +34,13 @@ function PostUploadCard({ invokePosts }) {
     getPhotos();
   }, []);
 
-  const onSelect = (src) => {
-    console.log('Selected', src);
-    setSelectedPhoto(src);
-  };
+  const onSelect = (src) => setSelectedPhoto(src);
 
-  const onChange = (e) => {
-    console.log(e.target.value);
-    setPosted(e.target.value);
-  };
+  const onChange = (e) => setPosted(e.target.value);
 
   const createPost = async () => {
     await addPost({
-      userId: 1,
+      userId: generateId(users),
       text: posted,
       image: selectedPhoto,
       location: '서울',
@@ -60,7 +54,7 @@ function PostUploadCard({ invokePosts }) {
   //todo: cards styles 사이즈 속성공통화 필요
   return (
     <PostUploadCardBlock>
-      <Cards style={{ margin: '10px 0' }}>
+      <Cards margin={'10px 0'}>
         <PostUploadHeader>업로드 컴포넌트 만드는중임</PostUploadHeader>
         <Inputs
           height={150}
