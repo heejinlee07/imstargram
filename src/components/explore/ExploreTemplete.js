@@ -1,102 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Items from '../common/ThumbnailPost';
+import useApi from '../../hooks/useApi';
 
 import {
   ExploreTempleteUl,
   ExploreTempleteUlLtTwo,
 } from './ExploreTemplete.style';
 
-const imageList = [
-  [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-    },
-  ],
-  [
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-    },
-  ],
-];
+import { getRandomPost } from '../../services/postsApi';
 
 export default function ExploreTemplete() {
-  return imageList.length > 2 ? (
-    <ExploreTempleteUl>
-      {imageList.map((url, i, a) => {
-        if (i === 1) return;
-        return i === 0 ? (
-          <li>
-            <ul>
-              <li key="item0">
-                <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
-              </li>
-              <li key="item1">
-                <Items imgUrl={a[1][0].original} isCarousel={a[1].length > 1} />
-              </li>
-            </ul>
-          </li>
-        ) : (
+  const [pageNum, setPage] = useState(1);
+  const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
+  const { data: posts } = useApi(getRandom);
+
+  console.log(posts);
+
+  return posts !== undefined ? (
+    posts.length > 2 ? (
+      <ExploreTempleteUl>
+        {posts.map((post, i, a) => {
+          if (i === 1) return;
+          return i === 0 ? (
+            <li>
+              <ul>
+                <li key="item0">
+                  <Items
+                    imgUrl={post.image}
+                    // isCarousel={post.image.length > 1}
+                  />
+                </li>
+                <li key="item1">
+                  <Items
+                    imgUrl={a[1].image}
+                    // isCarousel={a[1].image.length > 1}
+                  />
+                </li>
+              </ul>
+            </li>
+          ) : (
+            <li key={`item${i}`}>
+              <Items
+                imgUrl={post.image}
+                // isCarousel={post.image.length > 1}
+              />
+            </li>
+          );
+        })}
+      </ExploreTempleteUl>
+    ) : (
+      <ExploreTempleteUlLtTwo>
+        {posts.map((post, i) => (
           <li key={`item${i}`}>
-            <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
+            <Items
+              imgUrl={post.image}
+              // isCarousel={post.image.length > 1}
+            />
           </li>
-        );
-      })}
-    </ExploreTempleteUl>
+        ))}
+      </ExploreTempleteUlLtTwo>
+    )
   ) : (
-    <ExploreTempleteUlLtTwo>
-      {imageList.map((url, i) => (
-        <li key={`item${i}`}>
-          <Items imgUrl={url[0].original} isCarousel={url.length > 1} />
-        </li>
-      ))}
-    </ExploreTempleteUlLtTwo>
+    <div>로딩중...</div>
   );
 }

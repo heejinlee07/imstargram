@@ -31,3 +31,8 @@ export const editPost = (postId, params) => {
 export const deletePost = (postId) => {
   return api.delete(`/posts/${postId}`);
 };
+
+// 랜덤 피드용 post 불러오기
+export const getRandomPost = (pageNum) => {
+  return api.get(`/postS?_start=${9 * (pageNum - 1)}&_limit=9`);
+};
