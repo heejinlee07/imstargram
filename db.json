@@ -172,6 +172,15 @@
       "likeCount": 12,
       "uploadDate": "2020/09/04",
       "id": 15
+    },
+    {
+      "userId": 1,
+      "text": "ffff",
+      "image": "https://images.unsplash.com/photo-1599446794254-163e7e755689?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 16
     }
   ],
   "comments": [
@@ -216,13 +225,6 @@
       "text": "이 시국에 스벅?",
       "uploadDate": "2020/09/04",
       "id": 6
-    },
-    {
-      "userId": 3,
-      "postId": 1,
-      "text": "ㅋㅋㅋ고양이 귀엽당",
-      "uploadDate": "2020/09/04",
-      "id": 7
     }
   ],
   "followInfos": [

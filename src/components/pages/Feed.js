@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import PostUploadCard from '../postUpload/PostUploadCard';
 import Recommendation from '../recommendation/Recommendation';
-import { HomeBlock, PostBlock } from './Home.styles';
+import { HomeBlock, PostBlock } from './Feed.styles';
 import Post from '../post/Post';
 import useApi from '../../hooks/useApi';
 import { getPostsByUser } from '../../services/postsApi';
