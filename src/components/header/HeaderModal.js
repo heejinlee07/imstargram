@@ -47,7 +47,7 @@ const HeaderModal = () => {
         </Link>
         <div>로그아웃</div>
       </HeaderProfileModal>
-      <SquareShape></SquareShape>
+      {/* <SquareShape></SquareShape> */}
     </div>
   );
 };
