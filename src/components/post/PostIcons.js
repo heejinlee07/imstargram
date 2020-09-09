@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
 import { PostIconsBlock, PostLikeCount } from './PostIcons.styles';
-import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
+import {
+  ReplyIcon,
+  HeartIcon,
+  PaperPlaneIcon,
+  BookmarkIcon,
+} from '../../styles/commonIcons/SvgIcons';
 import { heartRed } from '../../styles/variables';
 
 import { iconList } from '../../styles/commonIcons/path';
 
 export default function PostIcons() {
-  const likeCount = 100;
+  const [count, setCount] = useState(1);
+  const [likeToggle, setLikeToggle] = useState(true);
 
   const [iconStatus, setIconStatus] = useState({
-    heart: false,
     bookmark: false,
   });
 
   const clickHeart = () => {
-    setIconStatus({ ...iconStatus, heart: !iconStatus.heart });
+    setLikeToggle(false);
+    setCount((prevNumber) => prevNumber - 1);
+  };
+
+  const UnClickHeart = () => {
+    setLikeToggle(true);
+    setCount((prevNumber) => prevNumber + 1);
   };
 
   const clickReply = () => {};
@@ -28,21 +39,22 @@ export default function PostIcons() {
   return (
     <>
       <PostIconsBlock>
-        <SvgIcon
-          onClick={clickHeart}
-          fill={iconStatus.heart ? heartRed : undefined}
-        >
-          <path
-            d={iconStatus.heart ? iconList.activeHeart : iconList.inactiveHeart}
-          />
-        </SvgIcon>
-        <SvgIcon onClick={clickReply}>
+        {likeToggle ? (
+          <HeartIcon onClick={clickHeart} fill={heartRed}>
+            <path d={iconList.activeHeart} />
+          </HeartIcon>
+        ) : (
+          <HeartIcon onClick={UnClickHeart} fill={undefined}>
+            <path d={iconList.inactiveHeart} />
+          </HeartIcon>
+        )}
+        <ReplyIcon onClick={clickReply}>
           <path d={iconList.reply} />
-        </SvgIcon>
-        <SvgIcon onClick={clickPaperPlane}>
+        </ReplyIcon>
+        <PaperPlaneIcon onClick={clickPaperPlane}>
           <path d={iconList.inactivePaperPlane} />
-        </SvgIcon>
-        <SvgIcon onClick={clickBookmark}>
+        </PaperPlaneIcon>
+        <BookmarkIcon onClick={clickBookmark}>
           <path
             d={
               iconStatus.bookmark
@@ -50,9 +62,9 @@ export default function PostIcons() {
                 : iconList.inactiveBookmark
             }
           />
-        </SvgIcon>
+        </BookmarkIcon>
       </PostIconsBlock>
-      {!likeCount || <PostLikeCount>좋아요 {likeCount}개</PostLikeCount>}
+      {count !== 0 && <PostLikeCount>좋아요 {count}개</PostLikeCount>}
     </>
   );
 }

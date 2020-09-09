@@ -9,7 +9,7 @@ import {
 } from '../../services/commentsApi';
 
 import Inputs from '../common/Inputs';
-import { fontColorBlack } from '../../styles/variables';
+import { fontColorBlack, nonSelectGrey } from '../../styles/variables';
 import {
   PostCommentsBlock,
   PostCommentListBlock,
@@ -63,7 +63,7 @@ function PostCommentList() {
   };
 
   const today = moment();
-  console.log(today);
+  // console.log(today);
 
   return (
     <PostCommentsBlock>
@@ -72,13 +72,16 @@ function PostCommentList() {
       <PostCommentListBlock>
         {comments?.map((comment) => (
           <PostComment
+            key={comment.id}
             comment={comment}
             _editComment={_editComment}
             _deleteComment={_deleteComment}
           />
         ))}
       </PostCommentListBlock>
-      <WhiteButtons>시간표시</WhiteButtons>
+      <WhiteButtons color={nonSelectGrey} fontSize={12}>
+        시간표시
+      </WhiteButtons>
       <PostInputBlock>
         <Inputs
           placeholder="댓글달기..."

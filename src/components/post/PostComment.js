@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import { WhiteButtons } from '../common/Buttons';
 import useApi from '../../hooks/useApi';
 import { getUserById } from '../../services/usersApi';
-import { PostCommentList } from './PostCommentList.styles';
 import Inputs from '../common/Inputs';
+import {
+  NoneEditMode,
+  PostCommentList,
+  CommentText,
+} from './PostComment.styles';
+import { nonSelectGrey, linkBlue, heartRed } from '../../styles/variables';
 
 const PostComment = ({ comment, _editComment, _deleteComment }) => {
   const [editMode, setEditMode] = useState(false);
@@ -16,7 +21,6 @@ const PostComment = ({ comment, _editComment, _deleteComment }) => {
 
   const editContents = (e) => {
     if (e.key !== 'Enter') return;
-    console.log('hi');
     _editComment(comment.id, editText);
     setEditText('');
     setEditMode(false);
@@ -25,20 +29,50 @@ const PostComment = ({ comment, _editComment, _deleteComment }) => {
   return (
     <PostCommentList>
       <WhiteButtons>{data?.name}</WhiteButtons>
-      <div key={comment.id}>{comment.text}</div>
       {!editMode ? (
-        <div onClick={() => setEditMode(true)}>수정하기</div>
+        <>
+          <CommentText key={comment.id}>{comment.text}</CommentText>
+          <NoneEditMode>
+            <WhiteButtons
+              fontWeight={'normal'}
+              margin={5}
+              onClick={() => setEditMode(true)}
+              color={nonSelectGrey}
+              hoverColor={linkBlue}
+            >
+              수정하기
+            </WhiteButtons>
+            <div onClick={() => _deleteComment(comment.id)}>
+              <WhiteButtons
+                fontWeight={'normal'}
+                color={nonSelectGrey}
+                hoverColor={heartRed}
+              >
+                x
+              </WhiteButtons>
+            </div>
+          </NoneEditMode>
+        </>
       ) : (
-        <Inputs
-          fontSize={14}
-          value={editText}
-          onChange={(e) => setEditText(e.target.value)}
-          onKeyPress={editContents}
-        />
+        <>
+          <Inputs
+            fontSize={14}
+            margin={'0'}
+            padding={2}
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+            onKeyPress={editContents}
+          />
+          <WhiteButtons
+            fontWeight={'normal'}
+            color={nonSelectGrey}
+            hoverColor={linkBlue}
+            onClick={() => setEditMode(false)}
+          >
+            취소
+          </WhiteButtons>
+        </>
       )}
-      <div onClick={() => _deleteComment(comment.id)}>
-        <div>x</div>
-      </div>
     </PostCommentList>
   );
 };
