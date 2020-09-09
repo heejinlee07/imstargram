@@ -6,7 +6,7 @@ import PostCommentList from './PostCommentList';
 import useApi from '../../hooks/useApi';
 import { getUserById } from '../../services/usersApi';
 
-function Post({ post }) {
+function Post({ post, users }) {
   const getUser = useCallback(() => getUserById(post.userId), [post.userId]);
   const { data: user } = useApi(getUser);
 
@@ -15,7 +15,7 @@ function Post({ post }) {
       <Cards padding={'0'} margin={'20px 0'}>
         <PostHeader post={post} user={user} />
         <PostContents post={post} user={user} />
-        <PostCommentList />
+        <PostCommentList post={post} users={users} user={user} />
       </Cards>
     </div>
   );

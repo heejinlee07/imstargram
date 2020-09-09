@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import PostUploadCard from '../postUpload/PostUploadCard';
 import Recommendation from '../recommendation/Recommendation';
 import { HomeBlock, PostBlock } from './Feed.styles';
