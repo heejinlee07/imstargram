@@ -13,7 +13,8 @@ import {
 } from './PostUploadCard.styles';
 import { addPost } from '../../services/postsApi';
 
-function PostUploadCard({ invokePosts }) {
+function PostUploadCard({ invokePosts, users }) {
+  console.log('usrs', users);
   const [activePhoto, setActivePhoto] = useState(false);
   const [image, setImage] = useState();
   const [posted, setPosted] = useState('');
@@ -44,9 +45,13 @@ function PostUploadCard({ invokePosts }) {
     setPosted(e.target.value);
   };
 
+  const generateId = () => {
+    return users?.length ? Math.max(...users?.map((user) => user?.id)) + 1 : 1;
+  };
+
   const createPost = async () => {
     await addPost({
-      userId: 1,
+      userId: generateId(),
       text: posted,
       image: selectedPhoto,
       location: '서울',

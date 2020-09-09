@@ -10,12 +10,12 @@ import SignIndex from '../components/sign/SignIndex';
 const MainRouter = () => {
   return (
     <Switch>
+      <Route exact path="/" component={HomeContainer} />
       <Route path="/direct" component={DirectContainer} />
       <Route path="/explore" component={ExploreContainer} />
       <Route path="/personal" component={PersonalContainer} />
       <Route path="/accounts" component={AccountsContainer} />
       <Route path="/signIndex" component={SignIndex} />
-      <Route path="/user/:userId" component={HomeContainer} />
     </Switch>
   );
 };
