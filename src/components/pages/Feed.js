@@ -1,34 +1,40 @@
 import React, { useCallback } from 'react';
-import { useParams } from 'react-router-dom';
-
 import PostUploadCard from '../postUpload/PostUploadCard';
 import Recommendation from '../recommendation/Recommendation';
 import { HomeBlock, PostBlock } from './Feed.styles';
 import Post from '../post/Post';
 import useApi from '../../hooks/useApi';
-import { getPostsByUser } from '../../services/postsApi';
-import { getUserById } from '../../services/usersApi';
+import { getPosts } from '../../services/postsApi';
+import { getUsers } from '../../services/usersApi';
 import RecommendationCarousel from '../recommendation/RecommendationCarousel';
 
-const Home = () => {
-  const { userId } = useParams();
-  const getUser = useCallback(() => getUserById(userId), [userId]);
-  const { data: user } = useApi(getUser);
+const Feed = () => {
+  const getAllUsers = useCallback(() => getUsers(), []);
+  const { data: users } = useApi(getAllUsers);
+  // console.log('users전체리스트', users);
 
-  const getPosts = useCallback(() => getPostsByUser(userId), [userId]);
+  const getFeed = useCallback(() => getPosts(), []);
   const { data: posts, isLoading, error, invoke: invokePosts } = useApi(
-    getPosts
+    getFeed
   );
+
+  // console.log('전체 피드', posts);
+
+  const descendingOrder = posts?.sort((a, b) => {
+    if (a.id > b.id) return -1;
+    if (a.id < b.id) return 1;
+    return 0;
+  });
 
   return (
     <HomeBlock>
       <PostBlock>
         {isLoading && <div>로딩 중...</div>}
         {error && <div>{error.message}</div>}
-        <PostUploadCard invokePosts={invokePosts} />
-        {posts?.map((post, idx) => (
+        <PostUploadCard invokePosts={invokePosts} users={users} />
+        {descendingOrder?.map((post, idx) => (
           <>
-            <Post post={post} user={user} />
+            <Post key={post.id} post={post} users={users} />
             {idx !== 0 && idx % 3 === 0 && <RecommendationCarousel />}
           </>
         ))}
@@ -37,4 +43,4 @@ const Home = () => {
     </HomeBlock>
   );
 };
-export default Home;
+export default Feed;

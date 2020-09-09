@@ -1,6 +1,13 @@
 import api from './api';
 
 // comments CRUD
+
+//전체 comments GET
+export const getComments = () => {
+  return api.get(`/comments`);
+};
+
+//postId 별로 GET
 export const getCommentsByPost = (postId) => {
   return api.get(`/comments?postId=${postId}`);
 };
