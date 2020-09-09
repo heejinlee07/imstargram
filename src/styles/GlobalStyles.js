@@ -8,6 +8,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  legend, label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
   html {
     font-size: 10px;
   }
@@ -42,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
   }
+  
 `;
 
 export default GlobalStyles;

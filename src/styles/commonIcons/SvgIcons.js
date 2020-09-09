@@ -9,6 +9,14 @@ import { SvgStyle } from './Svg.styles';
  * direct, heart
  */
 
+export const SvgIcon = ({ children, ...rest }) => {
+  return (
+    <SvgStyle viewBox="0 0 48 48" {...rest}>
+      {children}
+    </SvgStyle>
+  );
+};
+
 export const HomeIcon = ({ children, ...rest }) => {
   return (
     <SvgStyle aria-label="홈" viewBox="0 0 48 48" {...rest}>

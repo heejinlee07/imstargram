@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { PostIconsBlock, PostLikeCount } from './PostIcons.styles';
 import {
-  HeartIcon,
   ReplyIcon,
+  HeartIcon,
   PaperPlaneIcon,
   BookmarkIcon,
 } from '../../styles/commonIcons/SvgIcons';
@@ -11,15 +11,21 @@ import { heartRed } from '../../styles/variables';
 import { iconList } from '../../styles/commonIcons/path';
 
 export default function PostIcons() {
-  const likeCount = 100;
+  const [count, setCount] = useState(1);
+  const [likeToggle, setLikeToggle] = useState(true);
 
   const [iconStatus, setIconStatus] = useState({
-    heart: false,
     bookmark: false,
   });
 
   const clickHeart = () => {
-    setIconStatus({ ...iconStatus, heart: !iconStatus.heart });
+    setLikeToggle(false);
+    setCount((prevNumber) => prevNumber - 1);
+  };
+
+  const UnClickHeart = () => {
+    setLikeToggle(true);
+    setCount((prevNumber) => prevNumber + 1);
   };
 
   const clickReply = () => {};
@@ -33,14 +39,15 @@ export default function PostIcons() {
   return (
     <>
       <PostIconsBlock>
-        <HeartIcon
-          onClick={clickHeart}
-          fill={iconStatus.heart ? heartRed : undefined}
-        >
-          <path
-            d={iconStatus.heart ? iconList.activeHeart : iconList.inactiveHeart}
-          />
-        </HeartIcon>
+        {likeToggle ? (
+          <HeartIcon onClick={clickHeart} fill={heartRed}>
+            <path d={iconList.activeHeart} />
+          </HeartIcon>
+        ) : (
+          <HeartIcon onClick={UnClickHeart} fill={undefined}>
+            <path d={iconList.inactiveHeart} />
+          </HeartIcon>
+        )}
         <ReplyIcon onClick={clickReply}>
           <path d={iconList.reply} />
         </ReplyIcon>
@@ -57,7 +64,7 @@ export default function PostIcons() {
           />
         </BookmarkIcon>
       </PostIconsBlock>
-      {!likeCount || <PostLikeCount>좋아요 {likeCount}개</PostLikeCount>}
+      {count !== 0 && <PostLikeCount>좋아요 {count}개</PostLikeCount>}
     </>
   );
 }

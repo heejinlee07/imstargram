@@ -3,22 +3,28 @@ import Inputs from '../common/Inputs';
 import { Link } from 'react-router-dom';
 import {
   HeaderBlock,
+  Logo,
   HeaderNav,
   HeaderWrap,
   HeaderProfile,
 } from './Header.styles';
 import HeaderModal from './HeaderModal';
 import { bodyBgWhite } from '../../styles/variables';
-import {
-  HomeIcon,
-  PaperPlaneIcon,
-  FindPeopleIcon,
-  HeartIcon,
-} from '../../styles/commonIcons/SvgIcons';
+import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
+import HeaderLikeModal from './HeaderLikeModal';
 
 const Header = () => {
   const [navState, setNavState] = useState(false);
+  const [navLikeState, setNavLikeState] = useState(false);
+
+  const onClickProfile = () => {
+    navState === true ? setNavState(false) : setNavState(true);
+  };
+
+  const onClickLike = () => {
+    navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
+  }
 
   const state = {
     home: true,
@@ -64,12 +70,12 @@ const Header = () => {
     navState
       ? setActive(state)
       : setActive({
-          home: false,
-          direct: false,
-          findpeople: false,
-          heart: true,
-          profile: false,
-        });
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: true,
+        profile: false,
+      });
   };
 
   const clickProfile = () => {
@@ -77,26 +83,24 @@ const Header = () => {
     navState
       ? setActive(test)
       : setActive({
-          home: false,
-          direct: false,
-          findpeople: false,
-          heart: false,
-          profile: true,
-        });
+        home: false,
+        direct: false,
+        findpeople: false,
+        heart: false,
+        profile: true,
+      });
     console.log(test);
   };
 
-  const onClick = () => {
-    navState === true ? setNavState(false) : setNavState(true);
-  };
+
   return (
     <HeaderWrap>
       <HeaderBlock>
         <div>
-          <h1>logo</h1>
+          <Logo>I'mstargram</Logo>
           <div>
             <Inputs
-              InputWidth={176}
+              InputWidth={215}
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
@@ -108,51 +112,55 @@ const Header = () => {
         <HeaderNav>
           <li>
             <Link to="/">
-              <HomeIcon onClick={clickHome}>
+              <SvgIcon aria-label="home" onClick={clickHome}>
                 {isActive.home === false ? (
                   <path d={iconList.inactiveHome}></path>
                 ) : (
                     <path d={iconList.activeHome}></path>
                   )}
-              </HomeIcon>
+              </SvgIcon>
             </Link>
           </li>
           <li>
             <Link to="/direct">
-              <PaperPlaneIcon aria-label="direct" onClick={clickDirect}>
+              <SvgIcon aria-label="direct" onClick={clickDirect}>
                 {isActive.direct === false ? (
                   <path d={iconList.inactivePaperPlane}></path>
                 ) : (
                     <path d={iconList.activePaperPlane}></path>
                   )}
-              </PaperPlaneIcon>
+              </SvgIcon>
             </Link>
           </li>
           <li>
             <Link to="/explore">
-              <FindPeopleIcon onClick={clickFindPeople}>
+              <SvgIcon aria-label="사람 찾기" onClick={clickFindPeople}>
                 {isActive.findpeople === false ? (
                   <path d={iconList.inactiveFindPeople}></path>
                 ) : (
                     <path d={iconList.activeFindPeople}></path>
                   )}
-              </FindPeopleIcon>
+              </SvgIcon>
             </Link>
           </li>
-          <li onClick={onClick}>
-            <HeartIcon aria-label="활동 피드" onClick={clickHeart}>
+          <li onClick={onClickLike}>
+            <SvgIcon aria-label="활동 피드" onClick={clickHeart}>
               {isActive.heart === false ? (
                 <path d={iconList.inactiveHeart}></path>
               ) : (
-                <path d={iconList.activeHeart}></path>
-              )}
-            </HeartIcon>
+                  <path d={iconList.activeHeart}></path>
+                )}
+            </SvgIcon>
           </li>
-          {navState ? <HeaderModal /> : null}
-          <li onClick={onClick}>
+          {navLikeState ? <HeaderLikeModal /> : null}
+          <li onClick={onClickProfile}>
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>
           {navState ? <HeaderModal /> : null}
+          {/* 가입화면 테스트 연결페이지 */}
+          <li>
+            <Link to="/signIndex">Signin</Link>
+          </li>
         </HeaderNav>
       </HeaderBlock>
     </HeaderWrap>

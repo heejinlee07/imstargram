@@ -1,7 +1,12 @@
 import React from 'react';
+import { DirectWrap } from './Direct.Styles';
 
 const Direct = () => {
-  return <div>디엠이다~~</div>;
+  return (
+    <DirectWrap>
+      디엠이다~~
+    </DirectWrap>
+  );
 };
 
 export default Direct;
