@@ -13,6 +13,8 @@ import { bodyBgWhite } from '../../styles/variables';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
 import HeaderLikeModal from './HeaderLikeModal';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const Header = () => {
 
@@ -26,6 +28,27 @@ const Header = () => {
   const onClickLike = () => {
     navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
   };
+
+  const node = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    closeAllModal();
+  };
+
+  const closeAllModal = () => {
+    setNavLikeState(false);
+    setNavState(false);
+  }
 
   const state = {
     home: true,
@@ -117,7 +140,7 @@ const Header = () => {
             </Inputs>
           </div>
         </div>
-        <HeaderNav>
+        <HeaderNav ref={node}>
           <li>
             <Link to="/">
               <SvgIcon aria-label="home" onClick={clickHome}>
@@ -151,10 +174,7 @@ const Header = () => {
               </SvgIcon>
             </Link>
           </li>
-          <li onClick={(e) => {
-            onClickLike();
-          }
-          }>
+          <li onClick={onClickLike}>
             <SvgIcon aria-label="활동 피드" onClick={clickHeart}>
               {isActive.heart === false ? (
                 <path d={iconList.inactiveHeart}></path>
