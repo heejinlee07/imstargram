@@ -17,7 +17,7 @@ export default function ExploreTemplete({ pageNum, setDataEnd }) {
 
   // random post data 구하기
   const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
-  const { data: posts } = useApi(getRandom);
+  const { data: posts, headers } = useApi(getRandom);
 
   // reply 구하기
   const postIds = posts !== undefined ? posts.map((post) => post.id) : [];
@@ -30,6 +30,10 @@ export default function ExploreTemplete({ pageNum, setDataEnd }) {
       ? comments.filter((reply) => reply.postId === postId).length
       : 0;
   };
+
+  if (headers) {
+    if (!headers.link.includes('next')) setDataEnd(true);
+  }
 
   const click = () => {};
 
