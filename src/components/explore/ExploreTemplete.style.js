@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ExploreTempleteUlLtTwo = styled.ul`
   display: flex;
   flex-flow: row wrap;
+  height: 10000px;
 
   & > li {
     width: 32%;

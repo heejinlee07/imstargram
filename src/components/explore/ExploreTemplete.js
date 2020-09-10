@@ -11,13 +11,16 @@ import { getRandomPost } from '../../services/postsApi';
 import { getCommentByPostIds } from '../../services/commentsApi';
 
 export default function ExploreTemplete({ pageNum }) {
+  // random post data 구하기
   const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
   const { data: posts } = useApi(getRandom);
+
   // reply 구하기
   const postIds = posts !== undefined ? posts.map((post) => post.id) : [];
   const getReply = useCallback(() => getCommentByPostIds(postIds), []);
   const { data: comments } = useApi(getReply);
 
+  // 총 좋아요 수 구하는 함수
   const getReplayCount = (postId) => {
     return comments !== undefined
       ? comments.filter((reply) => reply.postId === postId).length
