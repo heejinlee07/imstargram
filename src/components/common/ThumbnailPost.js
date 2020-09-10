@@ -1,5 +1,10 @@
 import React from 'react';
-import { ItemWrap, ItemsUi, LikeUi, CommentUi } from './ThumbnailPost.style';
+import {
+  ThumbnailPostWrap,
+  ThumbnailPostUi,
+  LikeUi,
+  CommentUi,
+} from './ThumbnailPost.style';
 
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
@@ -18,15 +23,16 @@ import { fontColorWhite } from '../../styles/variables';
  * - size는 조절 불가 무조건 width 100% 정사각형
  */
 
-export default function Items({
+export default function ThumbnailPost({
   likeCount,
   replyCount,
   imgUrl,
+  onClick,
   isCarousel = false,
 }) {
   return (
-    <ItemWrap>
-      <ItemsUi url={imgUrl} isCarousel={isCarousel}>
+    <ThumbnailPostWrap onClick={onClick}>
+      <ThumbnailPostUi url={imgUrl} isCarousel={isCarousel}>
         <LikeUi>
           <SvgIcon fill={fontColorWhite}>
             <path d={iconList.activeHeart}></path>
@@ -39,7 +45,7 @@ export default function Items({
           </SvgIcon>
           <p>{replyCount || 0}</p>
         </CommentUi>
-      </ItemsUi>
-    </ItemWrap>
+      </ThumbnailPostUi>
+    </ThumbnailPostWrap>
   );
 }

@@ -34,5 +34,5 @@ export const deletePost = (postId) => {
 
 // 랜덤 피드용 post 불러오기
 export const getRandomPost = (pageNum) => {
-  return api.get(`/postS?_start=${9 * (pageNum - 1)}&_limit=9`);
+  return api.get(`/posts?_start=${9 * (pageNum - 1)}&_limit=3`);
 };
