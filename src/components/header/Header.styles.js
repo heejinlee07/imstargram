@@ -34,10 +34,11 @@ export const HeaderNav = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* width: 250px; */
   position: relative;
   li {
     cursor: pointer;
-    padding-left: 22px;
+    margin-left: 22px;
   }
 `;
 

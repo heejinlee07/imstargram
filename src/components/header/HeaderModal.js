@@ -7,7 +7,7 @@ const HeaderModal = () => {
   return (
     <div>
       <HeaderProfileModal>
-        <Link to="/personal">
+        <Link to="/personal/individual">
           <li>
             <SvgIcon
               viewBox="0 0 32 32"

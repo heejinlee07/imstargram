@@ -3,6 +3,7 @@ import { borderGrey } from '../../styles/variables';
 
 export const HeaderProfileModal = styled.ul`
    width: ${(props) => props.modalWidth || 230}px;
+   height: ${(props) => props.modalHeight}px;
    background: rgba(var(--d87,255,255,255),1);
    position: absolute;
    top: 54px;
@@ -13,6 +14,7 @@ export const HeaderProfileModal = styled.ul`
    li, div {
      display: block;
      width: 170px;
+     margin: 0;
      width: 100%;
      padding: 8px 16px;
      font-size: 15px;
@@ -33,3 +35,15 @@ export const HeaderProfileModal = styled.ul`
      border-top: 1px solid #dbdbdb;
    }
 `;
+
+export const LikeModal = styled.ul`
+  overflow: hidden;
+  height: 100px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  li {
+    div {
+      border-bottom: 1px solid  ${borderGrey};
+    }
+  }
+`

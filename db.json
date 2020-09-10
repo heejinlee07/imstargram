@@ -139,6 +139,20 @@
       "text": "나도나도ㅠㅠ",
       "uploadDate": "2020/09/04",
       "id": 10
+    },
+    {
+      "userId": 1,
+      "postId": 1,
+      "text": "asdf",
+      "uploadDate": "2020/09/04",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "postId": 1,
+      "text": "ㄴㅁ어리;",
+      "uploadDate": "2020/09/04",
+      "id": 12
     }
   ],
   "followInfos": [

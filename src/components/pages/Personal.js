@@ -9,8 +9,13 @@ import {
 } from './Personal.styles';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
+import { getFollowersByFollowingId } from '../../services/followInfoApi';
+import { useApi } from '../../hooks/useApi';
 
 const Personal = () => {
+
+  // const getUserFollow = useCallback(() => getFollowersByFollowingId(), []);
+  // const { data: userId } = useApi(getUserFollow);
 
   return (
     <>
@@ -27,7 +32,9 @@ const Personal = () => {
                 프로필 편집
               </button>
               <div>
-                <SvgIcon aria-label="설정">
+                <SvgIcon
+                  aria-label="설정"
+                >
                   <path d={iconList.setUp}></path>
                 </SvgIcon>
               </div>
@@ -51,7 +58,7 @@ const Personal = () => {
       </PersonalWrap>
       <ProfileNav>
         <li>
-          <Link to="/Personal">
+          <Link to="/Personal/individual">
             <span>
               <SvgIcon
                 aria-label="게시물"

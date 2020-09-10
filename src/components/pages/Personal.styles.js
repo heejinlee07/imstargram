@@ -36,7 +36,6 @@ export const IdWrap = styled.div`
     font-size: 28px;
   }
   button {
-    width: 94px;
     height: 30px;
     margin-left: 20px;
     padding: 5px 9px;
