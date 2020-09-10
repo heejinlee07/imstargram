@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import Items from '../common/ThumbnailPost';
 import useApi from '../../hooks/useApi';
 
@@ -18,8 +18,6 @@ export default function ExploreTemplete({ pageNum }) {
   const getReply = useCallback(() => getCommentByPostIds(postIds), []);
   const { data: comments } = useApi(getReply);
 
-  console.log(comments);
-
   const getReplayCount = (postId) => {
     return comments !== undefined
       ? comments.filter((reply) => reply.postId === postId).length
@@ -35,7 +33,7 @@ export default function ExploreTemplete({ pageNum }) {
         return i === 0 ? (
           <li key="itemWrap">
             <ul>
-              <li key="item0">
+              <li key="post0">
                 <Items
                   likeCount={post.likeCount}
                   replyCount={getReplayCount(post.id)}
@@ -43,7 +41,7 @@ export default function ExploreTemplete({ pageNum }) {
                   // isCarousel={post.image.length > 1}
                 />
               </li>
-              <li key="item1">
+              <li key="post1">
                 <Items
                   likeCount={a[1].likeCount}
                   replyCount={getReplayCount(a[1].id)}
@@ -54,7 +52,7 @@ export default function ExploreTemplete({ pageNum }) {
             </ul>
           </li>
         ) : (
-          <li key={`item${i}`}>
+          <li key={`post${i}`}>
             <Items
               likeCount={post.likeCount}
               replyCount={getReplayCount(post.id)}
