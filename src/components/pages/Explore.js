@@ -1,25 +1,25 @@
-import React, { useRef, useEffect, useState } from 'react';
-import throttle from 'lodash.throttle';
+import React, { useState, useEffect } from 'react';
 import { ExploreWrap } from './Explore.styles';
 import ExploreTemplete from '../explore/ExploreTemplete';
 
 const Explore = () => {
-  const [templeteList, setTempleteList] = useState([1]);
-  const [isDataEnd, setDataEnd] = useState(false);
-  const $wrap = useRef();
+  const [templeteList, setTempleteList] = useState([]);
+
+  const getNextPosts = () => {
+    setTempleteList([...templeteList, 1]);
+  };
 
   useEffect(() => {
-    if (!$wrap.current) return;
-    console.log($wrap.current);
-  }, [$wrap.current]);
+    getNextPosts();
+  }, []);
 
   return (
-    <ExploreWrap ref={$wrap}>
-      {templeteList.map((num) => (
+    <ExploreWrap onClick={getNextPosts}>
+      {templeteList.map((num, index, all) => (
         <ExploreTemplete
           pageNum={num}
-          setDataEnd={setDataEnd}
-          key={`page${num}`}
+          key={`page${index}`}
+          isLast={index === all.length - 1}
         />
       ))}
     </ExploreWrap>

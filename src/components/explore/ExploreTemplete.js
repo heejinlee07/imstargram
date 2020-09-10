@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useEffect } from 'react';
 import ThumbnailPost from '../common/ThumbnailPost';
 import useApi from '../../hooks/useApi';
-import { infiniteScroll } from '../../utils/infiniteScroll';
 
 import {
   ExploreTempleteUl,
@@ -12,9 +11,7 @@ import {
 import { getRandomPost } from '../../services/postsApi';
 import { getCommentByPostIds } from '../../services/commentsApi';
 
-export default function ExploreTemplete({ pageNum, setDataEnd }) {
-  const $ul = useRef();
-
+export default function ExploreTemplete({ pageNum }) {
   // random post data 구하기
   const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
   const { data: posts, headers } = useApi(getRandom);
@@ -31,16 +28,12 @@ export default function ExploreTemplete({ pageNum, setDataEnd }) {
       : 0;
   };
 
-  if (headers) {
-    if (!headers.link.includes('next')) setDataEnd(true);
-  }
-
   const click = () => {};
 
   return posts === undefined ? (
     <div>로딩중...</div>
   ) : posts.length > 2 ? (
-    <ExploreTempleteUl ref={$ul}>
+    <ExploreTempleteUl>
       {posts.map((post, i, a) => {
         if (i === 1) return;
         return i === 0 ? (
@@ -80,9 +73,9 @@ export default function ExploreTemplete({ pageNum, setDataEnd }) {
       })}
     </ExploreTempleteUl>
   ) : (
-    <ExploreTempleteUlLtTwo ref={$ul}>
+    <ExploreTempleteUlLtTwo>
       {posts.map((post, i) => (
-        <li key={`item${i}`}>
+        <li key={`post${i}`}>
           <ThumbnailPost
             imgUrl={post.image}
             onClick={click}
