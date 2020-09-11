@@ -39,6 +39,22 @@
       "email": "hello@gmail.com",
       "profileImage": "something url",
       "mobile": "010-1234-5678"
+    },
+    {
+      "id": 6,
+      "name": "6번 유저 자바",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 7,
+      "name": "7번 유저 장고",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
     }
   ],
   "posts": [

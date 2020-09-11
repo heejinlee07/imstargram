@@ -32,14 +32,17 @@ const Feed = () => {
         {isLoading && <div>로딩 중...</div>}
         {error && <div>{error.message}</div>}
         <PostUploadCard invokePosts={invokePosts} users={users} />
+        <RecommendationCarousel users={users} />
         {descendingOrder?.map((post, idx) => (
           <>
             <Post key={post.id} post={post} users={users} />
-            {idx !== 0 && idx % 3 === 0 && <RecommendationCarousel />}
+            {/* {idx !== 0 && idx % 2 === 0 && (
+              <RecommendationCarousel users={users} />
+            )} */}
           </>
         ))}
       </PostBlock>
-      <Recommendation />
+      <Recommendation users={users} />
     </HomeBlock>
   );
 };
