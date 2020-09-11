@@ -7,17 +7,17 @@ import useApi from '../../hooks/useApi';
 import { getPosts } from '../../services/postsApi';
 import { getUsers } from '../../services/usersApi';
 import RecommendationCarousel from '../recommendation/RecommendationCarousel';
+import { useSelector } from 'react-redux';
 
 const Feed = () => {
+  const posts = useSelector(({ posts }) => posts.posts);
+  const status = useSelector(({ posts }) => posts.status);
+
   const getAllUsers = useCallback(() => getUsers(), []);
   const { data: users } = useApi(getAllUsers);
-  // console.log('users전체리스트', users);
 
   const getFeed = useCallback(() => getPosts(), []);
-  const { data: posts, isLoading, error, invoke: invokePosts } = useApi(
-    getFeed
-  );
-
+  const { invoke: invokePosts } = useApi(getFeed);
   // console.log('전체 피드', posts);
 
   const descendingOrder = posts?.sort((a, b) => {
@@ -29,8 +29,8 @@ const Feed = () => {
   return (
     <HomeBlock>
       <PostBlock>
-        {isLoading && <div>로딩 중...</div>}
-        {error && <div>{error.message}</div>}
+        {status === 'loading' && <div>로딩 중...</div>}
+        {status === 'error' && <div>에러 발생...</div>}
         <PostUploadCard invokePosts={invokePosts} users={users} />
         <RecommendationCarousel users={users} />
         {descendingOrder?.map((post, idx) => (

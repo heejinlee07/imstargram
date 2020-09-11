@@ -182,6 +182,11 @@
       "followerId": 1,
       "followingId": 5,
       "id": 5
+    },
+    {
+      "followerId": 1,
+      "followingId": 7,
+      "id": 6
     }
   ]
 }

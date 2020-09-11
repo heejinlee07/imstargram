@@ -51,7 +51,6 @@ function PostUploadCard({ invokePosts, users }) {
     setPosted('');
   };
 
-  //todo: cards styles 사이즈 속성공통화 필요
   return (
     <PostUploadCardBlock>
       <Cards margin={'10px 0'}>

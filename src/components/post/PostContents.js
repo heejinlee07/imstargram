@@ -3,11 +3,15 @@ import PostIcons from './PostIcons';
 import { PostPhoto, PostText } from './PostContent.styles';
 import { WhiteButtons } from '../common/Buttons';
 import { linkBlue } from '../../styles/variables';
+import { useSelector } from 'react-redux';
 
 function PostContents({ post, user }) {
+  const posts = useSelector(({ posts }) => posts.posts);
+
+  const status = useSelector(({ posts }) => posts.status);
+
   //todo: 한줄로 정리 split.map~~~이런식으로
   // 또는 함수에 {}쓰지말고 바로 연결해서 할 수 있다.
-
   const hashtagStyle = (hashtag) => {
     const hashtagList = hashtag.split(' ');
     return hashtagList.map((tag) => {
