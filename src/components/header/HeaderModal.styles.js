@@ -46,4 +46,9 @@ export const LikeModal = styled.ul`
       border-bottom: 1px solid  ${borderGrey};
     }
   }
+`;
+
+export const BasicLikeModal = styled.div`
+  background-color: red;
 `
+

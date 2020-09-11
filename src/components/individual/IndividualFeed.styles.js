@@ -25,7 +25,7 @@ export const NoFeed = styled.div`
       padding-bottom: 20px;
     }
     div{ 
-      width: 340px;
+      width: 30px;
     }
   }
 `;

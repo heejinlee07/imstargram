@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
   PersonalWrap,
@@ -9,13 +9,17 @@ import {
 } from './Personal.styles';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
-import { getFollowersByFollowingId } from '../../services/followInfoApi';
-import { useApi } from '../../hooks/useApi';
 
 const Personal = () => {
 
-  // const getUserFollow = useCallback(() => getFollowersByFollowingId(), []);
-  // const { data: userId } = useApi(getUserFollow);
+  // const getUser = useCallback(() => getUserById(), []);
+  // const { data: userId } = useApi(getUser);
+  // console.log(getUser);
+
+  // const getFollow = useCallback(() => getFollowersByFollowingId(), []);
+  // const { data: followInfos } = useApi(
+  //   getFollow
+  // );
 
   return (
     <>
@@ -27,6 +31,9 @@ const Personal = () => {
           </header>
           <div>
             <IdWrap>
+              {/* {userId?.map((userId) => {
+                return <h3 key={userId}>{users.id}</h3>
+              })} */}
               <h3>아이디</h3>
               <button>
                 프로필 편집
@@ -40,9 +47,12 @@ const Personal = () => {
               </div>
             </IdWrap>
             <FollowWrap>
+              {/* {followInfos?.map(() => {
+                return <span>{followInfos.followerId}</span>
+              })} */}
               <li>
                 게시물
-              <span>100</span>
+              
               </li>
               <li>
                 팔로워

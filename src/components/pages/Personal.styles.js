@@ -5,7 +5,6 @@ export const PersonalWrap = styled.div`
   width: 935px;
   margin: 0 auto;
   padding: 30px 20px 0;
-  border-bottom: 1px solid ${borderGrey};
   main {
     padding-bottom: 44px;
     display: flex;
@@ -75,6 +74,7 @@ export const ProfileNav = styled.li`
   font-size: 12px;
   font-weight: 600;
   color: ${nonSelectGrey};
+  border-top: 1px solid ${borderGrey};
   li {
     margin: 0 50px 3px;
     letter-spacing: 1.5px;
