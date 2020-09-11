@@ -29,6 +29,7 @@ const Header = () => {
     navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
   };
 
+  // 모달 close
   const node = useRef();
 
   useEffect(() => {
