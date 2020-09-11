@@ -18,7 +18,7 @@ import {
 import { WhiteButtons } from '../common/Buttons';
 import PostComment from './PostComment';
 
-function PostCommentList({ user, post, users }) {
+function PostCommentList({ user, post }) {
   // console.log('유저정보', users);
   // console.log('post정보', post);
   const [comment, setComment] = useState('');

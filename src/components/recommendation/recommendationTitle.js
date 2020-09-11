@@ -16,17 +16,12 @@ const RecommendationTitle = styled.div`
 
 //module
 function recommendationTitle({ color, ...rest }) {
-  const changeStyle = (color) => {
-    return (
-      <WhiteButtons color={color} {...rest}>
-        모두 보기
-      </WhiteButtons>
-    );
-  };
   return (
     <RecommendationTitle>
       <h1>회원님을 위한 추천</h1>
-      {changeStyle(color, { ...rest })}
+      <WhiteButtons color={color} {...rest}>
+        모두 보기
+      </WhiteButtons>
     </RecommendationTitle>
   );
 }

@@ -3,22 +3,24 @@ import PostUploadCard from '../postUpload/PostUploadCard';
 import Recommendation from '../recommendation/Recommendation';
 import { HomeBlock, PostBlock } from './Feed.styles';
 import Post from '../post/Post';
-import useApi from '../../hooks/useApi';
+import useApiWithRedux from '../../hooks/useApiWithRedux';
 import { getPosts } from '../../services/postsApi';
 import { getUsers } from '../../services/usersApi';
 import RecommendationCarousel from '../recommendation/RecommendationCarousel';
 import { useSelector } from 'react-redux';
+import { POSTS } from '../../modules/PostsReducer';
+import { USERS } from '../../modules/UsersReducer';
 
 const Feed = () => {
   const posts = useSelector(({ posts }) => posts.posts);
   const status = useSelector(({ posts }) => posts.status);
+  const users = useSelector(({ users }) => users.users);
 
   const getAllUsers = useCallback(() => getUsers(), []);
-  const { data: users } = useApi(getAllUsers);
+  const { invoke: invokeUsers } = useApiWithRedux(USERS, getAllUsers);
 
   const getFeed = useCallback(() => getPosts(), []);
-  const { invoke: invokePosts } = useApi(getFeed);
-  // console.log('전체 피드', posts);
+  const { invoke: invokePosts } = useApiWithRedux(POSTS, getFeed);
 
   const descendingOrder = posts?.sort((a, b) => {
     if (a.id > b.id) return -1;
@@ -36,9 +38,9 @@ const Feed = () => {
         {descendingOrder?.map((post, idx) => (
           <>
             <Post key={post.id} post={post} users={users} />
-            {/* {idx !== 0 && idx % 2 === 0 && (
-              <RecommendationCarousel users={users} />
-            )} */}
+            {idx !== 0 && idx % 3 === 0 && (
+              <RecommendationCarousel key={users.id} users={users} />
+            )}
           </>
         ))}
       </PostBlock>

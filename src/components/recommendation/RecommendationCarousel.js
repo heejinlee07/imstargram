@@ -1,53 +1,41 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Cards from '../common/Cards';
-import {
-  CardsBlock,
-  CardBlock,
-  UserName,
-} from './RecommendationCarousel.styles';
-import Buttons, { WhiteButtons } from '../common/Buttons';
-import {
-  buttonSkyBlue,
-  fontColorWhite,
-  bodyBgtGrey,
-} from '../../styles/variables';
-import ProfileImage from '../common/ProfileImage';
+import { CardsBlock } from './RecommendationCarousel.styles';
+import { buttonSkyBlue } from '../../styles/variables';
 import RecommendationTitle from './recommendationTitle';
+import { useSelector } from 'react-redux';
+import { getFollowInfo } from '../../services/followInfoApi';
+import useApiWithRedux from '../../hooks/useApiWithRedux';
+import { FOLLOWS } from '../../modules/FollowInfoReducer';
+import RecommendationCard from './RecommendationCard';
 
 function RecommendationCarousel({ users }) {
+  const follows = useSelector(({ follows }) => follows.follows);
+
+  const userId = 1;
+
+  //전체 follows info가져오기
+  const getFollows = useCallback(() => getFollowInfo(), []);
+  const { invoke: invokeFollows } = useApiWithRedux(FOLLOWS, getFollows);
+
+  //5,6,7,,8,9,10
+  const exceptUserIdList = follows
+    .filter(
+      ({ followerId, followingId }) =>
+        followerId !== userId && followingId !== userId
+    )
+    .map((recommendation) => recommendation.id);
+
+  const recommendationList = exceptUserIdList.filter(
+    (item, index) => exceptUserIdList.indexOf(item) === index
+  );
+
   return (
     <Cards padding={'20px 10px'}>
       <RecommendationTitle color={buttonSkyBlue} />
       <CardsBlock>
-        {users?.map((user) => (
-          <CardBlock>
-            <Cards width={'150px'} height={'150px'}>
-              <WhiteButtons
-                color={bodyBgtGrey}
-                fontWeight={'normal'}
-                fontSize={12}
-              >
-                X
-              </WhiteButtons>
-              <ProfileImage margin={'0 0 10px 0'} />
-              <UserName>{user.name}</UserName>
-              <WhiteButtons
-                color={bodyBgtGrey}
-                fontWeight={'normal'}
-                fontSize={12}
-                margin={'0 0 10px 0'}
-              >
-                누구누구님이 외 3명이 팔로우합니다
-              </WhiteButtons>
-              <Buttons
-                width={'90%'}
-                bgColor={buttonSkyBlue}
-                color={fontColorWhite}
-              >
-                팔로우
-              </Buttons>
-            </Cards>
-          </CardBlock>
+        {recommendationList?.map((userId) => (
+          <RecommendationCard key={userId} userId={userId} />
         ))}
       </CardsBlock>
     </Cards>

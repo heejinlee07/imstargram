@@ -36,7 +36,7 @@ function PostUploadCard({ invokePosts, users }) {
 
   const onSelect = (src) => setSelectedPhoto(src);
 
-  const onChange = (e) => setPosted(e.target.value);
+  const onChange = ({ target }) => setPosted(target.value);
 
   const createPost = async () => {
     await addPost({

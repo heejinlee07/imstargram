@@ -1,10 +1,6 @@
 import React, { useCallback } from 'react';
 import RecommendationTitle from './recommendationTitle';
-import {
-  fontColorBlack,
-  buttonSkyBlue,
-  borderGrey,
-} from '../../styles/variables';
+import { fontColorBlack, borderGrey } from '../../styles/variables';
 import ProfileImage from '../common/ProfileImage';
 import { WhiteButtons } from '../common/Buttons';
 import {
@@ -12,16 +8,16 @@ import {
   LoginUserInfo,
   LoginUserName,
   UserNickName,
-  RecommendationUsersInfo,
   RecommendationFotterBlock,
   RecommendationFooter,
-} from './Recommendation.styls';
-import {
-  getFollowInfo,
-  getFollowersByFollowingId,
-  getFollowingsByFollowerId,
-} from '../../services/followInfoApi';
+} from './Recommendation.styles';
+import { getFollowInfo } from '../../services/followInfoApi';
 import useApi from '../../hooks/useApi';
+import { useSelector } from 'react-redux';
+import useApiWithRedux from '../../hooks/useApiWithRedux';
+import { FOLLOWS } from '../../modules/FollowInfoReducer';
+import { getUserById } from '../../services/usersApi';
+import RecommendationUser from './RecommendationUser';
 
 const footerList = [
   '소개·',
@@ -37,68 +33,41 @@ const footerList = [
   '언어',
 ];
 
-function Recommendation({ users }) {
-  console.log('kkkk', users);
-  // const filteredUsers = users?.filter((user) => user.id < 6);
+function Recommendation() {
+  const follows = useSelector(({ follows }) => follows.follows);
+  const status = useSelector(({ follows }) => follows.status);
 
-  //고정 Id === 1, 추후 로그인한 유저 id로 바꿔야함.
-  // const userId = users
-  //   ?.filter((user) => user.id !== 1)
-  //   .map((targetId) => targetId.id);
-  // console.log('id', userId);
+  const userId = 1;
 
-  const TargetId = 1;
+  //전체 follows info가져오기
+  const getFollows = useCallback(() => getFollowInfo(), []);
+  const { invoke: invokeFollows } = useApiWithRedux(FOLLOWS, getFollows);
 
-  //전체 팔로우리스트 가져오기
-  // const getFollowList = useCallback(() => getFollowInfo(), []);
+  //5,6,7,,8,9,10
+  const exceptUserIdList = follows
+    .filter(
+      ({ followerId, followingId }) =>
+        followerId !== userId && followingId !== userId
+    )
+    .map((recommendation) => recommendation.id);
 
-  // const { data: followlist, isLoading, error, invoke: invokeFollow } = useApi(
-  //   getFollowList
-  // );
-
-  // const a = followlist
-  //   ?.filter((user) => user.id !== 1)
-  //   .map((targetId) => targetId.id);
-  // console.log('idddd', a);
-
-  const getFollowerUser = useCallback(
-    () => getFollowingsByFollowerId(TargetId),
-    [TargetId]
+  const recommendationList = exceptUserIdList.filter(
+    (item, index) => exceptUserIdList.indexOf(item) === index
   );
 
-  const {
-    data: followerUser,
-    isLoading,
-    error,
-    invoke: invokeFollower,
-  } = useApi(getFollowerUser);
-
-  console.log('what?', followerUser);
-
-  const c = followerUser?.map((id) => id.followingId);
-  console.log('ywe', c);
-
-  const filteredUsers = followerUser?.filter((user) => user.id < 6);
-  console.log(filteredUsers);
-
-  //팔로잉 유저 정보 가져오기
-  // const getFollowingUsers = useCallback(
-  //   () => getFollowersByFollowingId(TargetId),
-  //   [TargetId]
-  // );
-
-  // const { data: followingUser, invoke: invokefollows } = useApi(
-  //   getFollowingUsers
-  // );
-  // console.log('dd', followlist);
+  //유저 정보 가져오기
+  const getUser = useCallback(() => getUserById(userId), [userId]);
+  const { data: user } = useApi(getUser);
 
   return (
     <RecommendationBlock>
+      {status === 'loading' && <div>로딩 중...</div>}
+      {status === 'error' && <div>에러 발생...</div>}
       <LoginUserInfo>
         <ProfileImage />
         <LoginUserName>
-          <WhiteButtons padding={'0'}>{followerUser?.followerId}</WhiteButtons>
-          <UserNickName>로그인한 유저 설정 이름</UserNickName>
+          <WhiteButtons padding={'0'}>{user?.name}</WhiteButtons>
+          <UserNickName>{user?.name}</UserNickName>
         </LoginUserName>
       </LoginUserInfo>
       <RecommendationTitle
@@ -106,24 +75,20 @@ function Recommendation({ users }) {
         fontSize={12}
         fontWeight={'normal'}
       />
-      {filteredUsers?.map((user) => (
-        <RecommendationUsersInfo key={user.id}>
-          <ProfileImage width={'30px'} height={'25px'} />
-          <LoginUserName>
-            <WhiteButtons padding={'0'} fontSize={12}>
-              {user.name}
-            </WhiteButtons>
-            <UserNickName>{user.name} 님 외 12명이 팔로우합니다</UserNickName>
-          </LoginUserName>
-          <WhiteButtons color={buttonSkyBlue} fontSize={12}>
-            팔로우
-          </WhiteButtons>
-        </RecommendationUsersInfo>
+      {recommendationList?.map((userId) => (
+        <RecommendationUser key={userId} userId={userId} />
       ))}
       <RecommendationFotterBlock>
         {footerList.map((footerName) => (
-          <WhiteButtons fontWeight={'normal'} color={borderGrey} fontSize={12}>
-            <RecommendationFooter>{footerName}</RecommendationFooter>
+          <WhiteButtons
+            key={footerName}
+            fontWeight={'normal'}
+            color={borderGrey}
+            fontSize={12}
+          >
+            <RecommendationFooter key={footerName}>
+              {footerName}
+            </RecommendationFooter>
           </WhiteButtons>
         ))}
         <WhiteButtons
