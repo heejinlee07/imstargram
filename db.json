@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "1번 유저리액트",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 2,
+      "name": "2번 유저 자바스크립트",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 3,
+      "name": "3번 유저 앵귤러",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 4,
+      "name": "4번 유저 뷰",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 5,
+      "name": "5번 유저 제이쿼리",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "text": "스벅에서 커피한잔",
+      "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "text": "내 고양이 귀엽지ㅎㅎㅎ",
+      "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "text": "여행가고싶다ㅠㅠ",
+      "image": "https://images.unsplash.com/photo-1599505323226-cee33f49d715?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "text": "어때? 나 멋짐? #OOTD #오늘날씨짱좋음 #셀카 #셀피",
+      "image": "https://images.unsplash.com/photo-1599440768612-0838a3bc8edb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 4
+    },
+    {
+      "userId": 5,
+      "text": "요즘 동물을 키워보고싶은데..부엉이 키워볼까? 오바임? 진짜로??? #부엉이 #키워보고싶은디... #동물 #귀염뽀짝",
+      "image": "https://images.unsplash.com/photo-1568432736771-21e74edaf27b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "userId": 1,
+      "postId": 5,
+      "text": "부엉이 키워봐 뭐어때 ㅋㅋㅋ",
+      "uploadDate": "2020/09/04",
+      "id": 5
+    }
+  ],
+  "followInfos": [
+    {
+      "followerId": 1,
+      "followingId": 3,
+      "id": 1
+    },
+    {
+      "followerId": 2,
+      "followingId": 4,
+      "id": 2
+    },
+    {
+      "followerId": 1,
+      "followingId": 2,
+      "id": 3
+    },
+    {
+      "followerId": 1,
+      "followingId": 4,
+      "id": 4
+    },
+    {
+      "followerId": 1,
+      "followingId": 5,
+      "id": 5
+    }
+  ]
+}

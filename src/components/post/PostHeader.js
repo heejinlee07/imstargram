@@ -6,18 +6,17 @@ import {
   PostNickname,
   PostMore,
 } from './PostHeader.styles';
+import ModalStyle from './ModalStyle';
 
-import { MoreIcon } from '../../styles/commonIcons/SvgIcons';
-
-function PostHeader() {
+function PostHeader({ user }) {
   return (
     <PostHeaderBlock>
       <PostInfo>
-        <PostProfile></PostProfile>
-        <PostNickname>test</PostNickname>
+        <PostProfile />
+        <PostNickname>{user?.name}</PostNickname>
       </PostInfo>
       <PostMore>
-        <MoreIcon width="22" height="22" />
+        <ModalStyle />
       </PostMore>
     </PostHeaderBlock>
   );

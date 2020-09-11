@@ -1,8 +1,23 @@
 import api from './api';
 
 // posts CRUD
+
+//전체 post GET
+export const getPosts = () => {
+  return api.get(`/posts`);
+};
+
+//userId별로 GET
 export const getPostsByUser = (userId) => {
   return api.get(`/posts?userId=${userId}`);
+};
+
+// export const getLikeCountsByPost = (params) => {
+//   return api.get(`/posts`, params);
+// };
+
+export const getLikeCountsByPost = (postId) => {
+  return api.get(`/posts?postId=${postId}`);
 };
 
 export const addPost = (params) => {

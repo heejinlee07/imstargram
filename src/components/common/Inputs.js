@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { InputUi } from './Inputs.styles';
 
 const Inputs = ({ children, ...rest }) => {

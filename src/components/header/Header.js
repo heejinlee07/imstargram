@@ -13,8 +13,11 @@ import { bodyBgWhite } from '../../styles/variables';
 import { SvgIcon } from '../../styles/commonIcons/SvgIcons';
 import { iconList } from '../../styles/commonIcons/path';
 import HeaderLikeModal from './HeaderLikeModal';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const Header = () => {
+
   const [navState, setNavState] = useState(false);
   const [navLikeState, setNavLikeState] = useState(false);
 
@@ -24,6 +27,28 @@ const Header = () => {
 
   const onClickLike = () => {
     navLikeState === true ? setNavLikeState(false) : setNavLikeState(true);
+  };
+
+  // 모달 close
+  const node = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    closeAllModal();
+  };
+
+  const closeAllModal = () => {
+    setNavLikeState(false);
+    setNavState(false);
   }
 
   const state = {
@@ -92,6 +117,12 @@ const Header = () => {
     console.log(test);
   };
 
+  const searchKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      return e.target.value = "";
+      // 수정 예정
+    }
+  }
 
   return (
     <HeaderWrap>
@@ -104,12 +135,13 @@ const Header = () => {
               InputMargin={'0'}
               InputColor={bodyBgWhite}
               placeholder="검색"
-            />
-            <span></span>
-            <div></div>
+              onKeyDown={searchKeyDown}
+              title="검색"
+            >
+            </Inputs>
           </div>
         </div>
-        <HeaderNav>
+        <HeaderNav ref={node}>
           <li>
             <Link to="/">
               <SvgIcon aria-label="home" onClick={clickHome}>
@@ -152,7 +184,7 @@ const Header = () => {
                 )}
             </SvgIcon>
           </li>
-          {navLikeState ? <HeaderLikeModal /> : null}
+          {navLikeState && <HeaderLikeModal />}
           <li onClick={onClickProfile}>
             <HeaderProfile onClick={clickProfile}></HeaderProfile>
           </li>

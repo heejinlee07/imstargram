@@ -9,7 +9,7 @@ import {
 } from '../../services/commentsApi';
 
 import Inputs from '../common/Inputs';
-import { fontColorBlack } from '../../styles/variables';
+import { fontColorBlack, nonSelectGrey } from '../../styles/variables';
 import {
   PostCommentsBlock,
   PostCommentListBlock,
@@ -18,12 +18,15 @@ import {
 import { WhiteButtons } from '../common/Buttons';
 import PostComment from './PostComment';
 
-function PostCommentList() {
+function PostCommentList({ user, post, users }) {
+  // console.log('유저정보', users);
+  // console.log('post정보', post);
   const [comment, setComment] = useState('');
 
-  const postId = 1;
-  const getComments = useCallback(() => getCommentsByPost(postId), [postId]);
+  const userId = user?.id;
+  const postId = post.id;
 
+  const getComments = useCallback(() => getCommentsByPost(postId), [postId]);
   const { data: comments, isLoading, error, invoke: invokeComments } = useApi(
     getComments
   );
@@ -39,8 +42,8 @@ function PostCommentList() {
 
   const createComment = async () => {
     await addComment({
-      userId: 3,
-      postId: 1,
+      userId: userId,
+      postId: postId,
       text: comment,
       uploadDate: '2020/09/04',
     });
@@ -49,7 +52,6 @@ function PostCommentList() {
   };
 
   const _deleteComment = async (id) => {
-    console.log(id);
     await deleteComment(id);
     await invokeComments();
   };
@@ -63,7 +65,7 @@ function PostCommentList() {
   };
 
   const today = moment();
-  console.log(today);
+  // console.log(today);
 
   return (
     <PostCommentsBlock>
@@ -72,18 +74,22 @@ function PostCommentList() {
       <PostCommentListBlock>
         {comments?.map((comment) => (
           <PostComment
+            key={comment.id}
             comment={comment}
             _editComment={_editComment}
             _deleteComment={_deleteComment}
           />
         ))}
       </PostCommentListBlock>
-      <WhiteButtons>시간표시</WhiteButtons>
+      <WhiteButtons color={nonSelectGrey} fontSize={12}>
+        시간표시
+      </WhiteButtons>
       <PostInputBlock>
         <Inputs
           placeholder="댓글달기..."
           textAlign={'left'}
           padding={3}
+          margin={'0'}
           color={fontColorBlack}
           fontSize={14}
           border={'none'}

@@ -5,7 +5,6 @@ export const PersonalWrap = styled.div`
   width: 935px;
   margin: 0 auto;
   padding: 30px 20px 0;
-  border-bottom: 1px solid ${borderGrey};
   main {
     padding-bottom: 44px;
     display: flex;
@@ -31,12 +30,11 @@ export const IdWrap = styled.div`
   display: flex;
   height: 40px;
   margin-bottom: 20px;
-  div {
+  h3 {
     font-weight: 300;
     font-size: 28px;
   }
   button {
-    width: 94px;
     height: 30px;
     margin-left: 20px;
     padding: 5px 9px;
@@ -44,6 +42,10 @@ export const IdWrap = styled.div`
     border-radius: 4px;
     border: 1px solid rgb(219, 219, 219);
     background-color: ${(props) => props.bgColor || bodyBgWhite};
+  }
+  div {
+    margin-left: 13px;
+    line-height: 40px;
   }
 `
 
@@ -72,10 +74,15 @@ export const ProfileNav = styled.li`
   font-size: 12px;
   font-weight: 600;
   color: ${nonSelectGrey};
+  border-top: 1px solid ${borderGrey};
   li {
-    margin-right: 60px;
+    margin: 0 50px 3px;
+    letter-spacing: 1.5px;
+    span {
+      padding-right: 5px;
+    }
   }
   li:last-child {
-    margin: 0;
+    margin-right: 0;
   }
 `
