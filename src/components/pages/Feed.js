@@ -43,4 +43,5 @@ const Feed = () => {
     </HomeBlock>
   );
 };
+
 export default Feed;
