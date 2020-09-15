@@ -1,6 +1,5 @@
-export const infiniteScroll = (target, event) => {
+export const infiniteScrollObserver = (target, event = () => {}) => {
   if (!target) return;
-  console.log(target);
 
   const options = {
     root: null,
@@ -11,10 +10,10 @@ export const infiniteScroll = (target, event) => {
   const observer = new IntersectionObserver((entries, observer) => {
     const { target, isIntersecting } = entries[0];
     console.log(target, isIntersecting);
-    if (isIntersecting) observer.unobserve(target);
+    if (!isIntersecting) return;
+    observer.disconnect();
+    event();
   }, options);
 
   observer.observe(target);
-
-  console.log(observer);
 };

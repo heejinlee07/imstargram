@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import InfiniteScrollReducer from './InfiniteScrollReducer';
 
 const rootReducer = combineReducers({
-  InfiniteScrollReducer,
+  infiniteScroll: InfiniteScrollReducer,
 });
 
 export default rootReducer;

@@ -1,6 +1,8 @@
 import React, { useCallback, useRef, useEffect } from 'react';
 import ThumbnailPost from '../common/ThumbnailPost';
 import useApi from '../../hooks/useApi';
+import { useDispatch } from 'react-redux';
+import { setLast } from '../../modules/InfiniteScrollReducer';
 
 import {
   ExploreTempleteUl,
@@ -12,6 +14,8 @@ import { getRandomPost } from '../../services/postsApi';
 import { getCommentByPostIds } from '../../services/commentsApi';
 
 export default function ExploreTemplete({ pageNum }) {
+  const dispatch = useDispatch();
+  const $ExploreTempleteUl = useRef();
   // random post data 구하기
   const getRandom = useCallback(() => getRandomPost(pageNum), [pageNum]);
   const { data: posts, headers } = useApi(getRandom);
@@ -30,10 +34,20 @@ export default function ExploreTemplete({ pageNum }) {
 
   const click = () => {};
 
+  useEffect(() => {
+    if (!headers) return;
+    if (!headers.link.includes('next'))
+      dispatch(
+        // setTarget($ExploreTempleteUl.current.lastElementChild, 'explore')
+        setLast()
+      );
+    // else dispatch(setTarget(null, 'explore'));
+  }, [$ExploreTempleteUl.current]);
+
   return posts === undefined ? (
     <div>로딩중...</div>
   ) : posts.length > 2 ? (
-    <ExploreTempleteUl>
+    <ExploreTempleteUl ref={$ExploreTempleteUl}>
       {posts.map((post, i, a) => {
         if (i === 1) return;
         return i === 0 ? (
@@ -73,7 +87,7 @@ export default function ExploreTemplete({ pageNum }) {
       })}
     </ExploreTempleteUl>
   ) : (
-    <ExploreTempleteUlLtTwo>
+    <ExploreTempleteUlLtTwo ref={$ExploreTempleteUl}>
       {posts.map((post, i) => (
         <li key={`post${i}`}>
           <ThumbnailPost
