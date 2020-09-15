@@ -10,8 +10,9 @@ import { heartRed } from '../../styles/variables';
 
 import { iconList } from '../../styles/commonIcons/path';
 
-export default function PostIcons() {
-  const [count, setCount] = useState(1);
+export default function PostIcons({ post }) {
+  const { likeCount } = post;
+  const [count, setCount] = useState(likeCount);
   const [likeToggle, setLikeToggle] = useState(true);
 
   const [iconStatus, setIconStatus] = useState({
@@ -20,12 +21,12 @@ export default function PostIcons() {
 
   const clickHeart = () => {
     setLikeToggle(false);
-    setCount((prevNumber) => prevNumber - 1);
+    setCount((likeCount) => likeCount - 1);
   };
 
   const UnClickHeart = () => {
     setLikeToggle(true);
-    setCount((prevNumber) => prevNumber + 1);
+    setCount((likeCount) => likeCount + 1);
   };
 
   const clickReply = () => {};
