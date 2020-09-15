@@ -1,8 +1,9 @@
 import React from 'react';
 import {
   HeaderProfileModal,
-  left
+  LikeModal
 } from './HeaderModal.styles';
+
 
 const HeaderLikeModal = () => {
 
@@ -11,12 +12,12 @@ const HeaderLikeModal = () => {
       <HeaderProfileModal
         modalWidth={550}
         left={-265}
+        modalHeight={362}
       >
-        <ul>
-          <li>누가좋아요</li>
-          <li>팔로우했어요</li>
-          <li>부자되고싶어요</li>
-        </ul>
+        <LikeModal>
+          <li><span></span><p>누가좋아요</p></li>
+          <li><span></span></li>
+        </LikeModal>
       </HeaderProfileModal>
     </div>
   );

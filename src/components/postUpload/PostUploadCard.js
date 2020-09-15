@@ -36,7 +36,7 @@ function PostUploadCard({ invokePosts, users }) {
 
   const onSelect = (src) => setSelectedPhoto(src);
 
-  const onChange = (e) => setPosted(e.target.value);
+  const onChange = ({ target }) => setPosted(target.value);
 
   const createPost = async () => {
     await addPost({
@@ -51,7 +51,6 @@ function PostUploadCard({ invokePosts, users }) {
     setPosted('');
   };
 
-  //todo: cards styles 사이즈 속성공통화 필요
   return (
     <PostUploadCardBlock>
       <Cards margin={'10px 0'}>

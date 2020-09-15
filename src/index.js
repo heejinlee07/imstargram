@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './styles/external.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 import rootReducer from './modules';
+import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(
   <Provider store={store}>
