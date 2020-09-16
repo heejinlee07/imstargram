@@ -23,3 +23,7 @@ export const editUser = (userId, params) => {
 export const deleteUser = (userId) => {
   return api.delete(`/users/${userId}`);
 };
+
+export const userIdpostId = (postId) => {
+  return api.delete(`/users?postId=${postId}`);
+};

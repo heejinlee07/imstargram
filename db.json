@@ -142,7 +142,169 @@
       "location": "서울",
       "likeCount": 12,
       "uploadDate": "2020/09/04",
-      "id": 6
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "text": "스벅에서 커피한잔",
+      "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "text": "내 고양이 귀엽지ㅎㅎㅎ",
+      "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "text": "여행가고싶다ㅠㅠ",
+      "image": "https://images.unsplash.com/photo-1599505323226-cee33f49d715?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 10
+    },
+    {
+      "userId": 4,
+      "text": "어때? 나 멋짐? #OOTD #오늘날씨짱좋음 #셀카 #셀피",
+      "image": "https://images.unsplash.com/photo-1599440768612-0838a3bc8edb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 11
+    },
+    {
+      "userId": 5,
+      "text": "요즘 동물을 키워보고싶은데..부엉이 키워볼까? 오바임? 진짜로??? #부엉이 #키워보고싶은디... #동물 #귀염뽀짝",
+      "image": "https://images.unsplash.com/photo-1568432736771-21e74edaf27b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 12
+    },
+    {
+      "userId": 6,
+      "text": "",
+      "image": "https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "text": "스벅에서 커피한잔",
+      "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "text": "내 고양이 귀엽지ㅎㅎㅎ",
+      "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "text": "여행가고싶다ㅠㅠ",
+      "image": "https://images.unsplash.com/photo-1599505323226-cee33f49d715?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 16
+    },
+    {
+      "userId": 4,
+      "text": "어때? 나 멋짐? #OOTD #오늘날씨짱좋음 #셀카 #셀피",
+      "image": "https://images.unsplash.com/photo-1599440768612-0838a3bc8edb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 17
+    },
+    {
+      "userId": 5,
+      "text": "요즘 동물을 키워보고싶은데..부엉이 키워볼까? 오바임? 진짜로??? #부엉이 #키워보고싶은디... #동물 #귀염뽀짝",
+      "image": "https://images.unsplash.com/photo-1568432736771-21e74edaf27b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 18
+    },
+    {
+      "userId": 6,
+      "text": "",
+      "image": "https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "text": "스벅에서 커피한잔",
+      "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "seoul",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 20
+    },
+    {
+      "userId": 2,
+      "text": "내 고양이 귀엽지ㅎㅎㅎ",
+      "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 21
+    },
+    {
+      "userId": 3,
+      "text": "여행가고싶다ㅠㅠ",
+      "image": "https://images.unsplash.com/photo-1599505323226-cee33f49d715?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 22
+    },
+    {
+      "userId": 4,
+      "text": "어때? 나 멋짐? #OOTD #오늘날씨짱좋음 #셀카 #셀피",
+      "image": "https://images.unsplash.com/photo-1599440768612-0838a3bc8edb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 23
+    },
+    {
+      "userId": 5,
+      "text": "요즘 동물을 키워보고싶은데..부엉이 키워볼까? 오바임? 진짜로??? #부엉이 #키워보고싶은디... #동물 #귀염뽀짝",
+      "image": "https://images.unsplash.com/photo-1568432736771-21e74edaf27b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 24
+    },
+    {
+      "userId": 6,
+      "text": "",
+      "image": "https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
+      "location": "서울",
+      "likeCount": 12,
+      "uploadDate": "2020/09/04",
+      "id": 25
     }
   ],
   "comments": [
