@@ -87,6 +87,22 @@
       "email": "hello@gmail.com",
       "profileImage": "something url",
       "mobile": "010-1234-5678"
+    },
+    {
+      "id": 12,
+      "name": "12번 유저 부트스트랩",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 13,
+      "name": "13번 유저 씨샵",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
     }
   ],
   "posts": [
