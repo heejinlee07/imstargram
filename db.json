@@ -39,6 +39,54 @@
       "email": "hello@gmail.com",
       "profileImage": "something url",
       "mobile": "010-1234-5678"
+    },
+    {
+      "id": 6,
+      "name": "6번 유저 자바",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 7,
+      "name": "7번 유저 장고",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 8,
+      "name": "8번 유저 파이썬",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 9,
+      "name": "9번 유저 css",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 10,
+      "name": "10번 유저 html",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
+    },
+    {
+      "id": 11,
+      "name": "11번 유저 node.js",
+      "password": "aaa",
+      "email": "hello@gmail.com",
+      "profileImage": "something url",
+      "mobile": "010-1234-5678"
     }
   ],
   "posts": [
@@ -47,7 +95,7 @@
       "text": "스벅에서 커피한잔",
       "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "seoul",
-      "likeCount": 12,
+      "likeCount": 1,
       "uploadDate": "2020/09/04",
       "id": 1
     },
@@ -56,7 +104,7 @@
       "text": "내 고양이 귀엽지ㅎㅎㅎ",
       "image": "https://images.unsplash.com/photo-1599506938744-33ea7c073dfb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
-      "likeCount": 12,
+      "likeCount": 5,
       "uploadDate": "2020/09/04",
       "id": 2
     },
@@ -65,7 +113,7 @@
       "text": "여행가고싶다ㅠㅠ",
       "image": "https://images.unsplash.com/photo-1599505323226-cee33f49d715?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
-      "likeCount": 12,
+      "likeCount": 7,
       "uploadDate": "2020/09/04",
       "id": 3
     },
@@ -74,7 +122,7 @@
       "text": "어때? 나 멋짐? #OOTD #오늘날씨짱좋음 #셀카 #셀피",
       "image": "https://images.unsplash.com/photo-1599440768612-0838a3bc8edb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE2MzgxMH0",
       "location": "서울",
-      "likeCount": 12,
+      "likeCount": 3,
       "uploadDate": "2020/09/04",
       "id": 4
     },
@@ -139,7 +187,7 @@
       "id": 1
     },
     {
-      "followerId": 2,
+      "followerId": 1,
       "followingId": 4,
       "id": 2
     },
@@ -149,14 +197,49 @@
       "id": 3
     },
     {
-      "followerId": 1,
-      "followingId": 4,
+      "followerId": 2,
+      "followingId": 1,
       "id": 4
     },
     {
-      "followerId": 1,
-      "followingId": 5,
+      "followerId": 2,
+      "followingId": 7,
       "id": 5
+    },
+    {
+      "followerId": 2,
+      "followingId": 7,
+      "id": 6
+    },
+    {
+      "followerId": 2,
+      "followingId": 3,
+      "id": 6
+    },
+    {
+      "followerId": 2,
+      "followingId": 4,
+      "id": 7
+    },
+    {
+      "followerId": 2,
+      "followingId": 5,
+      "id": 8
+    },
+    {
+      "followerId": 3,
+      "followingId": 1,
+      "id": 8
+    },
+    {
+      "followerId": 3,
+      "followingId": 2,
+      "id": 9
+    },
+    {
+      "followerId": 3,
+      "followingId": 4,
+      "id": 10
     }
   ]
 }

@@ -8,7 +8,7 @@ import {
 
 import { iconList } from '../../styles/commonIcons/path';
 
-export const ItemWrap = styled.button`
+export const ThumbnailPostWrap = styled.button`
   position: relative;
   width: 100%;
   padding-top: 100%;
@@ -18,7 +18,7 @@ export const ItemWrap = styled.button`
 const carouselUrl = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' height='28' viewBox='0 0 48 48' width='28'%3E%3Cpath d='${iconList.carousel}'%3E%3C/path%3E%3C/svg%3E")
 no-repeat top 2% right 2%, `;
 
-export const ItemsUi = styled.div`
+export const ThumbnailPostUi = styled.div`
   position: absolute;
   top: 0%;
   left: 0%;

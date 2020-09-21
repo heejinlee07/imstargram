@@ -4,6 +4,10 @@ import api from './api';
 // followerId = follow 요청을 받은 사람
 // followingId = follow 버튼을 누른 사람
 
+export const getFollowInfo = () => {
+  return api.get(`/followInfos`);
+};
+
 export const getFollowingsByFollowerId = (userId) => {
   return api.get(`/followInfos?followerId=${userId}`);
 };
